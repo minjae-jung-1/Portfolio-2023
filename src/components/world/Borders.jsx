@@ -8,8 +8,12 @@ function Borders() {
   
   return (
     <>
+
+      {/* top side plane */}
+      <Plane position={[0, viewport.height * 2, 0]} rotation={[Math.PI / 2, 0, 0]} />
+      
       {/* Bottom side plane */}
-      <Plane position={[0, -viewport.height / 2, 0]} rotation={[-Math.PI / 2, 0, 0]} />
+      <Plane position={[0, -viewport.height, 0]} rotation={[-Math.PI / 2, 0, 0]} />
 
       {/* Left side plane */}
       <Plane position={[-viewport.width * 2, 0, 0]} rotation={[0, Math.PI / 2, 0]} />

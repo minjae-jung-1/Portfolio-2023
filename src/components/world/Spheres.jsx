@@ -4,9 +4,10 @@ import { useFrame } from '@react-three/fiber'
 import { useEffect, useRef } from "react";
 
 function Spheres({ count }) {
-  const initialPos = [6, 2 + Math.random() * 30, 0]
+  const colors = ["#4071B8", "#3C4073", "#EDF7FB"]
+  const initialPos = [90, 2 + Math.random() * 80, 0]
   const { viewport } = useThree();
-  const [ ref, api ] = useSphere((index) => ({ mass: 5, position: initialPos, args: [1] }))
+  const [ ref, api ] = useSphere((index) => ({ mass: 5, position: initialPos, args: [2] }))
 
   const position = useRef([0, 0, 0])
 
@@ -15,17 +16,15 @@ function Spheres({ count }) {
   }, [])
 
   useFrame(() => {
-    if (position.current[0] < -20) {
+    if (position.current[0] < -60) {
       api.position.set(initialPos[0], initialPos[1], initialPos[2])
     }
-
-    console.log(position.current)
   })
 
   return (
     <mesh ref={ref} castShadow receiveShadow>
-      <sphereGeometry args={[1, 32, 32]} />
-      <meshToonMaterial color="#FADCE0" />
+      <sphereGeometry args={[4, 32, 32]} />
+      <meshToonMaterial color={colors[Math.floor(Math.random() * 2)]} />
     </mesh>
   )
 }
