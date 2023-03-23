@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Html, OrbitControls } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 
 import Spheres from "./world/Spheres";
@@ -35,6 +35,11 @@ const Experience = () => {
             <Mouse />
           </group>
         </Physics>
+        <Html position={[0, 0, 0, -10]} occlude transform>
+          <div className="bg-white w-full h-full">
+            It's me bitch
+          </div>
+        </Html>
       </Suspense>
       <PostProcessing />
     </Canvas>
