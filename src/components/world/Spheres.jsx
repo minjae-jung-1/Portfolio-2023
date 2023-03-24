@@ -5,9 +5,9 @@ import { useEffect, useRef } from "react";
 
 function Spheres({ count }) {
   const colors = ["#4071B8", "#3C4073", "#EDF7FB"]
-  const initialPos = [90, (0.5 - Math.random()) * 70, (1 - Math.random()) * 20]
+  const initialPos = [(Math.random() * 40) + 50, (0.5 - Math.random()) * 70, (1 - Math.random()) * 20]
   const { viewport } = useThree();
-  const [ ref, api ] = useSphere((index) => ({ mass: 1000, position: initialPos, args: [2], linearDamping: 0.0 }))
+  const [ ref, api ] = useSphere((index) => ({ mass: 1000, position: initialPos, args: [2], linearDamping: 0.18 }))
 
   const position = useRef([0, 0, 0])
 
@@ -16,8 +16,8 @@ function Spheres({ count }) {
   }, [])
 
   useFrame(() => {
-    if (position.current[0] < -60) {
-      api.position.set(initialPos[0], initialPos[1], initialPos[2])
+    if (position.current[0] < -viewport.width) {
+      api.position.set(90, initialPos[1], initialPos[2])
     }
   })
 
