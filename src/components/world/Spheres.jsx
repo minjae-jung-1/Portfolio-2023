@@ -7,7 +7,7 @@ function Spheres({ count }) {
   const colors = ["#4071B8", "#3C4073", "#EDF7FB"]
   const initialPos = [90, (0.5 - Math.random()) * 70, (1 - Math.random()) * 20]
   const { viewport } = useThree();
-  const [ ref, api ] = useSphere((index) => ({ mass: 1000, position: initialPos, args: [2], linearDamping: 0.25 }))
+  const [ ref, api ] = useSphere((index) => ({ mass: 1000, position: initialPos, args: [2], linearDamping: 0.0 }))
 
   const position = useRef([0, 0, 0])
 

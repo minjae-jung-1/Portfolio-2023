@@ -16,7 +16,7 @@ const Experience = () => {
       <OrbitControls />
       <color attach="background" args={["#E83F28"]} />
       <ambientLight intensity={.5} />
-      <directionalLight position={[-5, -10, -5]} intensity={0.5} />
+      <directionalLight position={[-9, -10, -5]} intensity={0.5} />
       <directionalLight
         castShadow
         intensity={1}
@@ -28,7 +28,7 @@ const Experience = () => {
         shadow-camera-bottom={-10}
       />
       <Suspense>
-        <Physics gravity={[-0.5, 0, 0]} defaultContactMaterial={{ restitution: 0.5 }}>
+        <Physics gravity={[-5, 0, 0]} defaultContactMaterial={{ restitution: 0.5 }}>
           <group position={[0, 0, -10]}>
             {Array.from({ length: 100 }, (_, i) => <Spheres key={i} index={i} />)}
             {/* <Spheres count={100} /> */}
