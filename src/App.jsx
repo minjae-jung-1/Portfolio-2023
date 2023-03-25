@@ -26,6 +26,9 @@ function App() {
     <div className="App">
       <div className='bg-transparent absolute w-full z-50'>
         <NavBar isMobile={isMobile} />
+        <div className="w-[92%] h-[85%] tColor relative flex border mt-24 ml-16 mr-16">
+
+        </div>
       </div>
       <Experience />
     </div>
