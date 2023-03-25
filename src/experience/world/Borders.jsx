@@ -2,10 +2,8 @@ import { useThree } from "@react-three/fiber";
 import Plane from "./Plane";
 
 function Borders() {
-  const { viewport } = useThree()
-
-  console.log(viewport.height, viewport.width)
-  
+  const { viewport } = useThree() 
+   
   return (
     <>
 

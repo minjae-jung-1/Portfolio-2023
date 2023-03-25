@@ -3,7 +3,7 @@ import { useThree, useFrame } from "@react-three/fiber";
 import { useSphere } from "@react-three/cannon"
 import * as THREE from "three";
 
-function Raycaster() {
+function Mouse() {
   const { camera, scene, viewport } = useThree();
   const [, api] = useSphere(() => ({ type: "Kinematic", args: [10] }))
   const [mouseState, setMouseState] = useState({});
@@ -26,4 +26,4 @@ function Raycaster() {
    })
 }
 
-export default Raycaster;
+export default Mouse;
