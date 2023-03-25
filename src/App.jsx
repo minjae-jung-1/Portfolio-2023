@@ -1,4 +1,4 @@
-import Experience from './components/Experience';
+import Experience from './experience/Experience';
 import NavBar from './components/NavBar';
 
 function App() {

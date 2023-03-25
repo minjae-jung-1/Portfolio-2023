@@ -6,13 +6,13 @@ import { Physics } from "@react-three/cannon";
 import Spheres from "./world/Spheres";
 import Borders from "./world/Borders";
 import Mouse from "./world/Mouse";
-import PostProcessing from "./world/PostProcessing"
+import PostProcessing from "./PostProcessing"
+import Raycaster from "./Raycaster";
 
 const Experience = () => {
   return(
     <Canvas shadows gl={{ stencil: false, antialias: false }} camera={{ position: [0, 0, 60 ], fov: 35  }} className="hello">
       {/* <OrbitControls /> */}
-      <PerspectiveCamera />
       {/* <fog attach="fog" args={["red", 10, 150]}/> */}
       <color attach="background" args={["#E83F28"]} />
       <ambientLight intensity={.5} />
@@ -32,7 +32,8 @@ const Experience = () => {
           <group position={[0, 0, -10]}>
             {Array.from({ length: 100 }, (_, i) => <Spheres key={i} index={i} />)}
             <Borders />
-            <Mouse />
+            {/* <Mouse /> */}
+            <Raycaster />
           </group>
         </Physics>
       </Suspense>
