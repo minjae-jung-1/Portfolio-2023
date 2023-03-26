@@ -8,9 +8,9 @@ function NavBar({ isMobile }) {
       <div className="ease luckiestGuy text-2xl">Minjae Jung</div>
       {isMobile && <a className="ease">Menu</a>}
       {!isMobile && (<div className="flex w-60 justify-between">
-        <div className="ease">WORK</div>
-        <div className="ease">ABOUT</div>
-        <div className="ease">CONTACT</div>
+        <div className="ease">icon</div>
+        <div className="ease">icon</div>
+        <div className="ease">icon</div>
       </div>)}
     </div>
   )

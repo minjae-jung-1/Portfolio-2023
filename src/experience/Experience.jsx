@@ -27,7 +27,7 @@ const Experience = () => {
           shadow-camera-top={10}
           shadow-camera-bottom={-10}
         />
-          <Physics gravity={[-5, 0, 0]} defaultContactMaterial={{ restitution: 0.5 }}>
+          <Physics gravity={[-5, -1, 1]} defaultContactMaterial={{ restitution: 0.5 }}>
             <group position={[0, 0, -10]}>
               {Array.from({ length: 100 }, (_, i) => <Spheres key={i} index={i} />)}
               <Borders />
