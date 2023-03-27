@@ -4,7 +4,16 @@ import Plane from "./Plane";
 function Borders({ isMobile }) {
   const { viewport } = useThree()
 
-  let multiplier = isMobile ? 10.0 : 1.0
+  console.log(viewport.height, viewport.width)
+
+  // let multiplier = isMobile ? 10.0 : 1.0
+
+  let multiplier
+  if (viewport.width < 51) {
+    multiplier = 8.0
+  } else if (viewport.width < 41) {
+    multiplier = 4.0
+  }
 
   return (
     <>
@@ -22,10 +31,10 @@ function Borders({ isMobile }) {
       <Plane position={[viewport.width * 2 * multiplier, 0, 0]} rotation={[0, -Math.PI / 2, 0]} />
 
       {/* Back (z) side plane */}
-      <Plane position={[0, , -10 * multiplier]} rotation={[0, 0, 0]} />
+      <Plane position={[0, 0, -10]} rotation={[0, 0, 0]} />
 
       {/* Front (z) side plane */}
-      <Plane position={[0, 0, 20 * multiplier]} rotation={[0, -Math.PI, 0]} />
+      <Plane position={[0, 0, 20]} rotation={[0, -Math.PI, 0]} />
     </>
   )
 }
