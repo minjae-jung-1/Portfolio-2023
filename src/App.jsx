@@ -49,12 +49,12 @@ function App() {
     <div className="App">
       <div className='bg-transparent z-50 absolute w-full h-full'>
         <NavBar isMobile={isMobile} />
-        <div className="flex w-full h-full py-20 px-16">
-          <div className="tColor w-full h-full border">
+        <div className="flex w-full h-full md:py-20 md:px-16 py-16 px-8">
+          <div className="tColor w-full h-full sm:border">
             <secion className="flex flex-col h-full justify-end text-white pb-14 pl-14">
-              <p className="cooper text-2xl px-0 mx-0">I'm a</p>
-              <p className="cooper text-2xl px-0 mx-0">Frontend</p>
-              <p className="cooper text-2xl">Engineer</p>
+              <p className="cooper lg:text-9xl sm:text-8xl text-5xl">I'm a</p>
+              <p className="cooper lg:text-9xl sm:text-8xl text-5xl">Frontend</p>
+              <p className="cooper lg:text-9xl sm:text-8xl text-5xl">Engineer</p>
             </secion>
             {/* <section className="flex flex-col h-full text-white py-14 px-14">
               <h1 className="text-9xl">Southpole</h1>
