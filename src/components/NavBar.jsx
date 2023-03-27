@@ -2,7 +2,7 @@ function NavBar({ isMobile }) {
   
   return (
     <div className={`
-      fixed flex w-full h-20 top-0 px-16 py-10 justify-between text-lg overflow-hidden text-white
+      fixed flex w-full h-20 top-0 px-16 pt-4 justify-between text-lg overflow-hidden text-white items-center
       ${isMobile ? 'px-8 py-6 text-base' : null}
     `}>
       <div className="ease luckiestGuy text-2xl">Minjae Jung</div>

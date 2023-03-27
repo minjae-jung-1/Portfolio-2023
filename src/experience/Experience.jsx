@@ -8,7 +8,7 @@ import Borders from "./world/Borders";
 import Mouse from "./Mouse";
 import PostProcessing from "./PostProcessing"
 
-const Experience = () => {
+const Experience = ({ isMobile }) => {
   return(
     <Canvas shadows gl={{ stencil: false, antialias: false }} camera={{ position: [0, 0, 60 ], fov: 35  }} className="hello">
       <Suspense>
@@ -29,8 +29,8 @@ const Experience = () => {
         />
           <Physics gravity={[-5, -1, 1]} defaultContactMaterial={{ restitution: 0.5 }}>
             <group position={[0, 0, -10]}>
-              {Array.from({ length: 100 }, (_, i) => <Spheres key={i} index={i} />)}
-              <Borders />
+              {Array.from({ length: isMobile ? 20 : 100 }, (_, i) => <Spheres key={i} index={i} />)}
+              <Borders isMobile={isMobile} />
               <Mouse />
             </group>
           </Physics>

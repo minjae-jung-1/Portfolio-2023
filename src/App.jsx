@@ -1,10 +1,10 @@
+import { useLayoutEffect, useState } from "react";
 import gsap from "gsap"
 import { Observer } from "gsap/Observer";
-import useWidthBreakpointReached from "./utils/Hooks";
 
+import useWidthBreakpointReached from "./utils/Hooks";
 import Experience from './experience/Experience';
 import NavBar from './components/NavBar';
-import { useLayoutEffect } from "react";
 
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
   const isMobile = useWidthBreakpointReached("md")
 
   useLayoutEffect(() => {
+
     const t1 = gsap.timeline();
     const t2 = gsap.timeline();
 
@@ -27,7 +28,7 @@ function App() {
       },
     }).from(".tColor", {
       opacity: 0,
-      duration: .2
+      duration: .4
     }).to('.scrollText', {
       y: '8px',
       duration: 1,
@@ -46,19 +47,47 @@ function App() {
 
   return (
     <div className="App">
-      <div className='bg-transparent absolute w-full h-full z-50'>
+      <div className='bg-transparent z-50 absolute w-full h-full'>
         <NavBar isMobile={isMobile} />
-        <div className="w-[92%] h-[85%] tColor relative border mt-24 ml-16 mr-16">
-          <div className="flex flex-col w-full h-full justify-end text-white pb-14 pl-10">
-            <p className="luckiestGuy text-9xl px-0 mx-0">Frontend</p>
-            <p className="luckiestGuy text-9xl">Engineer</p>
+        <div className="flex w-full h-full py-20 px-16">
+          <div className="tColor w-full h-full border">
+            <secion className="flex flex-col h-full justify-end text-white pb-14 pl-14">
+              <p className="cooper text-2xl px-0 mx-0">I'm a</p>
+              <p className="cooper text-2xl px-0 mx-0">Frontend</p>
+              <p className="cooper text-2xl">Engineer</p>
+            </secion>
+            {/* <section className="flex flex-col h-full text-white py-14 px-14">
+              <h1 className="text-9xl">Southpole</h1>
+            </section> */}
+            {/* <section className="flex flex-col h-full w-1/3 text-white pt-28 px-14">
+              <h1 className="text-9xl mb-4 projects">Projects</h1>
+              <div
+                className="accordion flex justify-start border-t-4 h-24 pt-2 text-2xl hover:pointer overflow-hidden gap-x-2"
+                onMouseEnter={() => handleAccordion()}
+                onMouseLeave={() => handleAccordion()}
+              >
+                <div className="arrow">
+                  <div>
+                    Hotswaps
+                  </div>
+                  <div className="text-sm">
+                    React / TailwindCSS / PostgreSQL / Express / AWS
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center border-t-4 h-24 pt-2 text-2xl">AudioAnalyzer</div>
+              <div className="flex items-center border-t-4 h-24 pt-2 text-2xl">Client to Server Network Visualization</div>
+              <div className="flex items-center border-t-4 h-24 pt-2 border-b-4 text-2xl">Algorithm Visualizer</div>
+              <div className="w-full h-full pt-8">
+              </div>
+            </section> */}
           </div>
         </div>
-        <div className="scrollTextContainer w-full h-max-content flex justify-center mt-8">
+        {/* <div className="scrollTextContainer w-full h-max-content flex justify-center mt-8">
           <p className="scrollText">Scroll to continue</p>
-        </div>
+        </div> */}
       </div>
-      <Experience />
+      <Experience isMobile={isMobile} />
     </div>
   )
 }
@@ -69,3 +98,4 @@ export default App;
 // name - Anton, Luckiest Guy, Bungee Shade
 
 //https://codepen.io/GreenSock/pen/XWzRraJ
+// add custom mouse circle, goes well with balls
