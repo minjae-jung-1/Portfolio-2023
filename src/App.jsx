@@ -12,6 +12,7 @@ function App() {
   gsap.registerPlugin(Observer);
 
   const isMobile = useWidthBreakpointReached("md")
+
   const sections = useRef([]);
   const textSections = useRef([]);
 
@@ -45,8 +46,8 @@ function App() {
     Observer.create({
       type: "wheel, touch, scroll, pointer",
       wheelSpeed: -1,
-      onDown: () => !animating && goToSection(currentIndex - 1, -1),
-      onUp: () => !animating && goToSection(currentIndex + 1, 1),
+      onDown: () => !animating && goToSection(currentIndex - 1),
+      onUp: () => !animating && goToSection(currentIndex + 1),
       tolerance: 130,
     })
 
@@ -56,13 +57,12 @@ function App() {
 
   }, [])  
 
-  function goToSection(index, direction) {
-    console.log("index", index, "direction:", direction)
+  function goToSection(index) {
+
     index = wrap(index)
     animating = true
-    let fromTop = direction === 1,
-        dFactor = fromTop ? -1 : 1,
-        t2 = gsap.timeline({
+
+    let t2 = gsap.timeline({
           defaults: { duration: 1.25, ease: "power1.inOut" },
           onComplete: () => animating = false
         })
@@ -105,9 +105,6 @@ function App() {
       })
       gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 2, delay: 1 })
     }
-
-    console.log(sections.current[index])
-
     currentIndex = index;
   }
 
@@ -115,20 +112,20 @@ function App() {
     <div className="App">
       <div className='bg-transparent z-50 absolute w-full h-full'>
         <NavBar isMobile={isMobile} />
-        <div className="flex w-full h-full md:py-20 md:px-16 py-16 px-8">
+        <div className="flex w-full h-full md:py-20 md:px-16 pb-32 px-4">
           <div className="tColor w-full h-full sm:border overflow-y-hidden">
 
-            <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-[85%] justify-end text-white mb-14 pl-14 invisible">
+            <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-[87%] md:h-[93%] w-full justify-end text-white md:mb-14 pl-4 md:pl-16  invisible">
               <div ref={el => textSections.current[0] = el} className="textSectionOne">
-                <p className="cooper lg:text-9xl sm:text-8xl text-5xl">I'm a</p>
-                <p className="cooper lg:text-9xl sm:text-8xl text-5xl">Frontend</p>
-                <p className="cooper lg:text-9xl sm:text-8xl text-5xl">Engineer</p>
-                <p className="cooper lg:text-4xl sm:text-8xl text-5xl">with startup experience</p>
-                <p className="cooper lg:text-4xl sm:text-8xl text-5xl mt-2">based in New York City.</p>
+                <p className="cooper lg:text-9xl sm:text-8xl text-7xl">I'm a</p>
+                <p className="cooper lg:text-9xl sm:text-8xl text-7xl">Frontend</p>
+                <p className="cooper lg:text-9xl sm:text-8xl text-7xl">Engineer</p>
+                <p className="cooper lg:text-4xl sm:text-8xl text-2xl">with startup experience</p>
+                <p className="cooper lg:text-4xl sm:text-8xl text-2xl md:mt-2">based in New York City.</p>
               </div>
             </div>
 
-            <div ref={el => sections.current[1] = el} className="flex fixed flex-col h-[85%] w-1/3 text-white pt-28 px-14 invisible">
+            <div ref={el => sections.current[1] = el} className="flex fixed flex-col h-[85%] w-1/3 text-white pt-24 px-14 invisible">
               <div ref={el => textSections.current[1] = el} >
                 <h1 className="text-9xl mb-4 projects">Projects</h1>
                 <div
