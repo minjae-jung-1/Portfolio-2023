@@ -15,7 +15,7 @@ function App() {
   const sections = useRef([]);
   const textSections = useRef([]);
 
-  let currentIndex = 0,
+  let currentIndex = -1,
       wrap,
       animating;
 
@@ -52,9 +52,12 @@ function App() {
 
     wrap = gsap.utils.wrap(0, sections.current.length)
 
+    goToSection(0, 1);
+
   }, [])  
 
   function goToSection(index, direction) {
+    console.log("index", index, "direction:", direction)
     index = wrap(index)
     animating = true
     let fromTop = direction === 1,
@@ -64,13 +67,18 @@ function App() {
           onComplete: () => animating = false
         })
     
+    // Disappear current section
     if (currentIndex >= 0) {
-      console.log('if running')
       gsap.set(sections.current[currentIndex], { zIndex: 0, });
       t2.to(textSections.current[currentIndex], { opacity: 0, duration: 1 })
         .set(sections.current[currentIndex], { autoAlpha: 0, duration: 1  })
     }
+
+    // Make next section appear
     gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 2, delay: 1 })
+    gsap.to(textSections.current[index], { opacity: 1, duration: 1, delay: 1 })
+
+    // Turn on blur
     if (currentIndex === 0) {
       gsap.to(".tColor", {
         backdropFilter: "saturate(180%)",
@@ -83,6 +91,23 @@ function App() {
         delay: 1
       })
     }
+
+    if (index === 0) {
+      gsap.to(".tColor", {
+        backdropFilter: "saturate(0%)",
+        duration: 2,
+        delay: 1
+      })
+      gsap.to(".tColor", {
+        backdropFilter: "blur(0px)",
+        duration: 2,
+        delay: 1
+      })
+      gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 2, delay: 1 })
+    }
+
+    console.log(sections.current[index])
+
     currentIndex = index;
   }
 
@@ -91,9 +116,9 @@ function App() {
       <div className='bg-transparent z-50 absolute w-full h-full'>
         <NavBar isMobile={isMobile} />
         <div className="flex w-full h-full md:py-20 md:px-16 py-16 px-8">
-          <div className="tColor w-full h-full sm:border">
+          <div className="tColor w-full h-full sm:border overflow-y-hidden">
 
-            <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-[85%] justify-end text-white mb-14 pl-14">
+            <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-[85%] justify-end text-white mb-14 pl-14 invisible">
               <div ref={el => textSections.current[0] = el} className="textSectionOne">
                 <p className="cooper lg:text-9xl sm:text-8xl text-5xl">I'm a</p>
                 <p className="cooper lg:text-9xl sm:text-8xl text-5xl">Frontend</p>
@@ -129,8 +154,14 @@ function App() {
             </div>
 
             <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-[85%] w-1/3 text-white pt-28 px-14 invisible">
-              <div>
+            <div ref={el => textSections.current[2] = el} >
                 About Me
+              </div>
+            </div>
+
+            <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-[85%] w-1/3 text-white pt-28 px-14 invisible">
+            <div ref={el => textSections.current[3] = el} >
+                Contact Me
               </div>
             </div>
 
