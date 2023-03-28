@@ -76,12 +76,12 @@ function App() {
     gsap.to(sections.current[1], { autoAlpha: 1, zIndex: 1, duration: 2, delay: 1 })
     gsap.to(".tColor", {
       backdropFilter: "saturate(180%)",
-      duration: 2,
+      duration: 3,
       delay: 1
     })
     gsap.to(".tColor", {
       backdropFilter: "blur(40px)",
-      duration: 2,
+      duration: 3,
       delay: 1
     })
   }
@@ -98,13 +98,15 @@ function App() {
                 <p className="cooper lg:text-9xl sm:text-8xl text-5xl">I'm a</p>
                 <p className="cooper lg:text-9xl sm:text-8xl text-5xl">Frontend</p>
                 <p className="cooper lg:text-9xl sm:text-8xl text-5xl">Engineer</p>
+                <p className="cooper lg:text-4xl sm:text-8xl text-5xl">with startup experience</p>
+                <p className="cooper lg:text-4xl sm:text-8xl text-5xl mt-2">based in New York City.</p>
               </div>
             </div>
 
             <div ref={el => sections.current[1] = el} className="flex fixed flex-col h-[85%] w-1/3 text-white pt-28 px-14 invisible">
               <h1 className="text-9xl mb-4 projects">Projects</h1>
               <div
-                className="accordion flex justify-start border-t-4 h-24 pt-2 text-2xl hover:pointer overflow-hidden gap-x-2"
+                className="accordion flex justify-start border-t-4 h-28 pt-2 text-2xl hover:pointer overflow-hidden gap-x-2"
                 onMouseEnter={() => handleAccordion()}
                 onMouseLeave={() => handleAccordion()}
               >
