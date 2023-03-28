@@ -50,14 +50,11 @@ function App() {
       tolerance: 130,
     })
 
-    wrap = gsap.utils.wrap(0, sections.length)
-
-    console.log(sections)
+    wrap = gsap.utils.wrap(0, sections.current.length)
 
   }, [])  
 
   function goToSection(index, direction) {
-    console.log("fn", sections)
     index = wrap(index)
     animating = true
     let fromTop = direction === 1,
@@ -69,21 +66,24 @@ function App() {
     
     if (currentIndex >= 0) {
       console.log('if running')
-      gsap.set(sections.current[0], { zIndex: 0, });
-      t2.to(textSections.current[0], { opacity: 0, duration: 1 })
-        .set(sections.current[0], { autoAlpha: 0, duration: 1  })
+      gsap.set(sections.current[currentIndex], { zIndex: 0, });
+      t2.to(textSections.current[currentIndex], { opacity: 0, duration: 1 })
+        .set(sections.current[currentIndex], { autoAlpha: 0, duration: 1  })
     }
-    gsap.to(sections.current[1], { autoAlpha: 1, zIndex: 1, duration: 2, delay: 1 })
-    gsap.to(".tColor", {
-      backdropFilter: "saturate(180%)",
-      duration: 3,
-      delay: 1
-    })
-    gsap.to(".tColor", {
-      backdropFilter: "blur(40px)",
-      duration: 3,
-      delay: 1
-    })
+    gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 2, delay: 1 })
+    if (currentIndex === 0) {
+      gsap.to(".tColor", {
+        backdropFilter: "saturate(180%)",
+        duration: 3,
+        delay: 1
+      })
+      gsap.to(".tColor", {
+        backdropFilter: "blur(40px)",
+        duration: 3,
+        delay: 1
+      })
+    }
+    currentIndex = index;
   }
 
   return (
@@ -104,25 +104,33 @@ function App() {
             </div>
 
             <div ref={el => sections.current[1] = el} className="flex fixed flex-col h-[85%] w-1/3 text-white pt-28 px-14 invisible">
-              <h1 className="text-9xl mb-4 projects">Projects</h1>
-              <div
-                className="accordion flex justify-start border-t-4 h-28 pt-2 text-2xl hover:pointer overflow-hidden gap-x-2"
-                onMouseEnter={() => handleAccordion()}
-                onMouseLeave={() => handleAccordion()}
-              >
-                <div className="arrow">
-                  <div>
-                    Hotswaps
-                  </div>
-                  <div className="text-sm">
-                    React / TailwindCSS / PostgreSQL / Express / AWS
+              <div ref={el => textSections.current[1] = el} >
+                <h1 className="text-9xl mb-4 projects">Projects</h1>
+                <div
+                  className="accordion flex justify-start border-t-4 h-28 pt-2 text-2xl hover:pointer overflow-hidden gap-x-2"
+                  onMouseEnter={() => handleAccordion()}
+                  onMouseLeave={() => handleAccordion()}
+                >
+                  <div className="arrow">
+                    <div>
+                      Hotswaps
+                    </div>
+                    <div className="text-sm">
+                      React / TailwindCSS / PostgreSQL / Express / AWS
+                    </div>
                   </div>
                 </div>
+                <div className="flex items-center border-t-4 h-24 pt-2 text-2xl">AudioAnalyzer</div>
+                <div className="flex items-center border-t-4 h-24 pt-2 text-2xl">Client to Server Network Visualization</div>
+                <div className="flex items-center border-t-4 h-24 pt-2 border-b-4 text-2xl">Algorithm Visualizer</div>
+                <div className="w-full h-full pt-8">
+                </div>
               </div>
-              <div className="flex items-center border-t-4 h-24 pt-2 text-2xl">AudioAnalyzer</div>
-              <div className="flex items-center border-t-4 h-24 pt-2 text-2xl">Client to Server Network Visualization</div>
-              <div className="flex items-center border-t-4 h-24 pt-2 border-b-4 text-2xl">Algorithm Visualizer</div>
-              <div className="w-full h-full pt-8">
+            </div>
+
+            <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-[85%] w-1/3 text-white pt-28 px-14 invisible">
+              <div>
+                About Me
               </div>
             </div>
 
