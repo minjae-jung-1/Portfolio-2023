@@ -34,7 +34,7 @@ function App() {
       },
     }).from(".tColor", {
       opacity: 0,
-      duration: .4
+      duration: .2
     }).to('.scrollText', {
       y: '8px',
       duration: 1,
@@ -70,40 +70,40 @@ function App() {
     // Disappear current section
     if (currentIndex >= 0) {
       gsap.set(sections.current[currentIndex], { zIndex: 0, });
-      t2.to(textSections.current[currentIndex], { opacity: 0, duration: 1 })
-        .set(sections.current[currentIndex], { autoAlpha: 0, duration: 1  })
+      t2.to(textSections.current[currentIndex], { opacity: 0, duration: .5 })
+        .set(sections.current[currentIndex], { autoAlpha: 0, duration: .5 })
     }
 
     // Make next section appear
-    gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 2, delay: 1 })
-    gsap.to(textSections.current[index], { opacity: 1, duration: 1, delay: 1 })
+    gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 1, delay: .5 })
+    gsap.to(textSections.current[index], { opacity: 1, duration: .5, delay: .5 })
 
     // Turn on blur
     if (currentIndex === 0) {
       gsap.to(".tColor", {
         backdropFilter: "saturate(180%)",
-        duration: 3,
-        delay: 1
+        duration: 1.5,
+        delay: .5
       })
       gsap.to(".tColor", {
         backdropFilter: "blur(40px)",
-        duration: 3,
-        delay: 1
+        duration: 1.5,
+        delay: .5
       })
     }
 
     if (index === 0) {
       gsap.to(".tColor", {
         backdropFilter: "saturate(0%)",
-        duration: 2,
-        delay: 1
+        duration: 1,
+        delay: .5
       })
       gsap.to(".tColor", {
         backdropFilter: "blur(0px)",
-        duration: 2,
-        delay: 1
+        duration: 1,
+        delay: .5
       })
-      gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 2, delay: 1 })
+      gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 1, delay: .5 })
     }
     currentIndex = index;
   }
