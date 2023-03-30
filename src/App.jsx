@@ -265,15 +265,29 @@ function App() {
               </div>
             </div>
 
-            <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
-            <div ref={el => textSections.current[2] = el} >
+            <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-[85%] w-1/3 text-white pt-28 px-14 invisible">
+              <div ref={el => textSections.current[2] = el} >
                 About Me
+                <div>
+                  I am currently an IT Specialist with experience in Front End Development.
+                </div>
               </div>
             </div>
 
-            <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
-            <div ref={el => textSections.current[3] = el} >
+            <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-[85%] w-1/3 text-white pt-28 px-14 invisible">
+              <div ref={el => textSections.current[3] = el} >
                 Contact Me
+                <div>
+                  <div>
+                    Email
+                  </div>
+                  <div>
+                    Phone
+                  </div>
+                  <div>
+                    Leave a message
+                  </div>
+                </div>
               </div>
             </div>
 
