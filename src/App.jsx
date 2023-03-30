@@ -111,27 +111,49 @@ function App() {
     }
     currentIndex = index;
 
-    gsap.set(projectBg.current[0], {
-      x: -projectBg.current[0].offsetWidth
-    })
+    for (let i = 0; i < projectBg.current.length; i++) {
+      gsap.set(projectBg.current[i], {
+        x: -projectBg.current[i].offsetWidth
+      })
+    }
   }
 
-
+  // const projectSection = useRef([]);
+  // const projectTitle = useRef([]);
+  // const projectStack = useRef([]);
+  // const projectLink = useRef([]);
+  // const projectBg = useRef([]);
 
   function handleHover(index, hovering) {
 
+    const textElements = [projectTitle.current[index], projectStack.current[index], projectLink.current[index]];
+
+    console.log(textElements)
+
     if (hovering){
-      gsap.to(projectBg.current[0], {
+      gsap.to(projectBg.current[index], {
         x: 0,
         duration: 0.2,
         ease: "power4.easeOut"
       })
+      for (let i = 0; i < textElements.length; i ++) {
+        gsap.to(textElements[i], {
+          color: 'black',
+          duration: .2,
+        })
+      }
     }
     if (!hovering){
-      gsap.to(projectBg.current[0], {
-        x: -projectBg.current[0].offsetWidth,
+      gsap.to(projectBg.current[index], {
+        x: -projectBg.current[index].offsetWidth,
         duration: 0.2
       })
+      for (let i = 0; i < textElements.length; i ++) {
+        gsap.to(textElements[i], {
+          color: 'white',
+          duration: .2,
+        })
+      }
     }
   }
 
@@ -162,9 +184,9 @@ function App() {
                   ref={el => projectSection.current[0] = el} 
                 >
                   <div ref={el => projectBg.current[0] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
-                  <div className="flex flex-col justify-center">
+                  <div className="flex flex-col justify-center z-50">
                     <div
-                      className="text-6xl"
+                      className="text-6xl bg-clip-text"
                       ref={el => projectTitle.current[0] = el} 
                     >
                       Spotlist
@@ -176,9 +198,9 @@ function App() {
                       React Native / Django 
                     </div>
                   </div>
-                  <a target="_blank" href="https://www.github.com">
+                  <a className="z-50" target="_blank" href="https://www.github.com">
                     <div 
-                      className="text-lg underline"
+                      className="text-lg underline z-50"
                       ref={el => projectLink.current[0] = el} 
                     >
                       website
@@ -187,107 +209,143 @@ function App() {
                 </div>
 
                 <div
-                  className="accordion flex justify-between items-center border-t-2 h-36 pt-2 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                  onMouseEnter={() => handleHover()}
-                  onMouseLeave={() => handleHover()}
+                  className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                  onMouseEnter={() => handleHover(1, true)}
+                  onMouseLeave={() => handleHover(1, false)}
+                  ref={el => projectSection.current[1] = el} 
                 >
-                  <div className="flex flex-col justify-center">
-                    <div className="text-6xl">
+                  <div ref={el => projectBg.current[1] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                  <div className="flex flex-col justify-center z-50">
+                    <div
+                      className="text-6xl bg-clip-text"
+                      ref={el => projectTitle.current[1] = el} 
+                    >
                       Hotswaps
                     </div>
-                    <div className="text-sm">
-                      React / TailwindCSS / PostgreSQL / Express / AWS
+                    <div 
+                      className="text-sm"
+                      ref={el => projectStack.current[1] = el} 
+                    >
+                      React / TailwindCSS / Node / Express / PostgreSQL / AWS
                     </div>
                   </div>
-                  <a target="_blank" href="https://www.github.com">
-                    <div className="text-lg underline">
+                  <a className="z-50" target="_blank" href="https://www.github.com">
+                    <div 
+                      className="text-lg underline z-50"
+                      ref={el => projectLink.current[1] = el} 
+                    >
                       website
                     </div>
                   </a>
                 </div>
+
                 <div
-                  className="accordion flex justify-between items-center border-t-2 h-36 pt-2 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                  onMouseEnter={() => handleHover()}
-                  onMouseLeave={() => handleHover()}
+                  className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                  onMouseEnter={() => handleHover(2, true)}
+                  onMouseLeave={() => handleHover(2, false)}
+                  ref={el => projectSection.current[2] = el} 
                 >
-                  <div className="flex flex-col justify-center">
-                    <div className="text-6xl">
+                  <div ref={el => projectBg.current[2] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                  <div className="flex flex-col justify-center z-50">
+                    <div
+                      className="text-6xl bg-clip-text"
+                      ref={el => projectTitle.current[2] = el} 
+                    >
                       AudioAnalyzer
                     </div>
-                    <div className="text-sm">
-                      React / TailwindCSS / PostgreSQL / Express / AWS
+                    <div 
+                      className="text-sm"
+                      ref={el => projectStack.current[2] = el} 
+                    >
+                      React / TailwindCSS / Node / Express / PostgreSQL / AWS
                     </div>
                   </div>
-                  <a target="_blank" href="https://www.github.com">
-                    <div className="text-lg underline">
-                      github
+                  <a className="z-50" target="_blank" href="https://www.github.com">
+                    <div 
+                      className="text-lg underline z-50"
+                      ref={el => projectLink.current[2] = el} 
+                    >
+                      website
                     </div>
                   </a>
                 </div>
+
                 <div
-                  className="accordion flex justify-between items-center border-t-2 h-36 pt-2 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                  onMouseEnter={() => handleHover()}
-                  onMouseLeave={() => handleHover()}
+                  className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                  onMouseEnter={() => handleHover(3, true)}
+                  onMouseLeave={() => handleHover(3, false)}
+                  ref={el => projectSection.current[3] = el} 
                 >
-                  <div className="flex flex-col justify-center">
-                    <div className="text-6xl">
+                  <div ref={el => projectBg.current[3] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                  <div className="flex flex-col justify-center z-50">
+                    <div
+                      className="text-6xl bg-clip-text"
+                      ref={el => projectTitle.current[3] = el} 
+                    >
                       Client-Server Network Visualization
                     </div>
-                    <div className="text-sm">
-                      React / TailwindCSS / PostgreSQL / Express / AWS
+                    <div 
+                      className="text-sm"
+                      ref={el => projectStack.current[3] = el} 
+                    >
+                      React / TailwindCSS / Node / Express / PostgreSQL / AWS
                     </div>
                   </div>
-                  <a target="_blank" href="https://www.github.com">
-                    <div className="text-lg underline">
-                      github
+                  <a className="z-50" target="_blank" href="https://www.github.com">
+                    <div 
+                      className="text-lg underline z-50"
+                      ref={el => projectLink.current[3] = el} 
+                    >
+                      website
                     </div>
                   </a>
                 </div>
+
                 <div
-                  className="accordion flex justify-between items-center border-t-2 border-b-2 h-36 pt-2 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                  onMouseEnter={() => handleHover()}
-                  onMouseLeave={() => handleHover()}
+                  className="accordion flex justify-between items-center border-t-2 border-b-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                  onMouseEnter={() => handleHover(4, true)}
+                  onMouseLeave={() => handleHover(4, false)}
+                  ref={el => projectSection.current[4] = el} 
                 >
-                  <div className="flex flex-col justify-center">
-                    <div className="text-6xl">
+                  <div ref={el => projectBg.current[4] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                  <div className="flex flex-col justify-center z-50">
+                    <div
+                      className="text-6xl bg-clip-text"
+                      ref={el => projectTitle.current[4] = el} 
+                    >
                       Algorithm Visualizer
                     </div>
-                    <div className="text-sm">
-                      React / TailwindCSS / PostgreSQL / Express / AWS
+                    <div 
+                      className="text-sm"
+                      ref={el => projectStack.current[4] = el} 
+                    >
+                      React / TailwindCSS / Node / Express / PostgreSQL / AWS
                     </div>
                   </div>
-                  <a target="_blank" href="https://www.github.com">
-                    <div className="text-lg underline">
-                      github
+                  <a className="z-50" target="_blank" href="https://www.github.com">
+                    <div 
+                      className="text-lg underline z-50"
+                      ref={el => projectLink.current[4] = el} 
+                    >
+                      website
                     </div>
                   </a>
                 </div>
+
+
+
               </div>
             </div>
 
-            <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-[85%] w-1/3 text-white pt-28 px-14 invisible">
-              <div ref={el => textSections.current[2] = el} >
+            <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
+            <div ref={el => textSections.current[2] = el} >
                 About Me
-                <div>
-                  I am currently an IT Specialist with experience in Front End Development.
-                </div>
               </div>
             </div>
 
-            <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-[85%] w-1/3 text-white pt-28 px-14 invisible">
-              <div ref={el => textSections.current[3] = el} >
+            <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
+            <div ref={el => textSections.current[3] = el} >
                 Contact Me
-                <div>
-                  <div>
-                    Email
-                  </div>
-                  <div>
-                    Phone
-                  </div>
-                  <div>
-                    Leave a message
-                  </div>
-                </div>
               </div>
             </div>
 
