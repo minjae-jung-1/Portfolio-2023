@@ -22,7 +22,7 @@ function App() {
   const projectStack = useRef([]);
   const projectLink = useRef([]);
   const projectBg = useRef([]);
-
+  let isLoaded = false;
   let currentIndex = -1,
       wrap,
       animating;
@@ -59,29 +59,33 @@ function App() {
 
     goToSection(0, 1);
 
+    isLoaded = true
   }, [])  
-
+  
   function goToSection(index) {
 
     index = wrap(index)
     animating = true
 
     let t2 = gsap.timeline({
-          defaults: { duration: 1.25, ease: "power1.inOut" },
-          onComplete: () => animating = false
-        })
-    
-    // Disappear current section
-    if (currentIndex >= 0) {
-      gsap.set(sections.current[currentIndex], { zIndex: 0, });
-      t2.to(textSections.current[currentIndex], { opacity: 0, duration: .5 })
-        .set(sections.current[currentIndex], { autoAlpha: 0, duration: .5 })
+      defaults: { duration: 1.25, ease: "power1.inOut" },
+      onComplete: () => animating = false
+    })
+
+
+    if(isLoaded !== false){
+      if (currentIndex >= 0) {
+        gsap.set(sections.current[currentIndex], { zIndex: 0, });
+        t2.to(textSections.current[currentIndex], { opacity: 0, duration: .5 })
+          .set(sections.current[currentIndex], { autoAlpha: 0, duration: .5 })
+      }
+  
+      // Make next section appear
+      gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 1, delay: .5 })
+      gsap.to(textSections.current[index], { opacity: 1, duration: .5, delay: .5 })
     }
-
-    // Make next section appear
-    gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 1, delay: .5 })
-    gsap.to(textSections.current[index], { opacity: 1, duration: .5, delay: .5 })
-
+    // Disappear current section
+    
     // Turn on blur
     if (currentIndex === 0) {
       gsap.to(".tColor", {
@@ -129,6 +133,9 @@ function App() {
     const textElements = [projectTitle.current[index], projectStack.current[index], projectLink.current[index]];
 
     console.log(textElements)
+
+    console.log('project',projectTitle)
+
 
     if (hovering){
       gsap.to(projectBg.current[index], {
@@ -340,12 +347,27 @@ function App() {
             <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
             <div ref={el => textSections.current[2] = el} >
                 About Me
+                <div>
+                  My Interests include
+                   <p>Soccer</p>
+                   <p>Guitar</p>
+                   <p>Snowboarding</p>
+                   <p>Skateboarding</p>
+                   <p>Cards</p>
+                </div>
               </div>
             </div>
 
             <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
             <div ref={el => textSections.current[3] = el} >
                 Contact Me
+                <div>
+                  Form? Or Email?
+                  <div>
+                    <button>form</button>
+                    <button>email</button>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -376,8 +398,9 @@ export default App;
 // https://codepen.io/GreenSock/pen/oNYXzYB
 
 // To-Do
-// 2. Disable scroll until first transition is finished -- May need if implementing loading page
 // 3. Something wrong going on with mobile landscape and canvas(?), may need resizing?
 
 // Done
 // 1. Make animation times faster -- DONE
+// 2. Disable scroll until first transition is finished -- DONE
+
