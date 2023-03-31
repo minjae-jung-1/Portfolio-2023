@@ -195,7 +195,7 @@ function App() {
                       className="text-sm"
                       ref={el => projectStack.current[0] = el} 
                     >
-                      React Native / Django 
+                      React Native / Django / AWS Elastic Beanstalk
                     </div>
                   </div>
                   <a className="z-50" target="_blank" href="https://www.github.com">
