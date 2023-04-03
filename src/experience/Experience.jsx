@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useContext } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
@@ -8,7 +8,12 @@ import Borders from "./world/Borders";
 import Mouse from "./Mouse";
 import PostProcessing from "./PostProcessing"
 
+import { GPUContext } from "../App";
+
 const Experience = ({ isMobile }) => {
+
+  const { tier } = useContext(GPUContext)
+
   return(
     <Canvas shadows gl={{ stencil: false, antialias: false }} camera={{ position: [0, 0, 60 ], fov: 35  }} className="hello">
       <Suspense>
@@ -29,7 +34,7 @@ const Experience = ({ isMobile }) => {
         />
           <Physics gravity={[-5, -1, 1]} defaultContactMaterial={{ restitution: 0.5 }}>
             <group position={[0, 0, -10]}>
-              {Array.from({ length: isMobile ? 10 : 100 }, (_, i) => <Spheres isMobile={isMobile} key={i} index={i} />)}
+              {Array.from({ length: (tier >= 2 ) ? 20 : 100 }, (_, i) => <Spheres isMobile={isMobile} key={i} index={i} />)}
               <Borders isMobile={isMobile} />
               <Mouse />
             </group>

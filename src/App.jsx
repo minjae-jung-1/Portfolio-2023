@@ -1,10 +1,14 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { createContext, useLayoutEffect, useRef } from "react";
 import gsap from "gsap"
 import { Observer } from "gsap/Observer";
+
+import { useDetectGPU } from "@react-three/drei";
 
 import useWidthBreakpointReached from "./utils/Hooks";
 import Experience from './experience/Experience';
 import NavBar from './components/NavBar';
+
+export const GPUContext = createContext(null)
 
 
 function App() {
@@ -12,6 +16,8 @@ function App() {
   gsap.registerPlugin(Observer);
 
   const isMobile = useWidthBreakpointReached("md")
+
+  const GPUTier = useDetectGPU()
 
   const sections = useRef([]);
   
@@ -60,6 +66,7 @@ function App() {
     goToSection(0, 1);
 
     isLoaded = true
+
   }, [])  
   
   function goToSection(index) {
@@ -165,220 +172,224 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div className='bg-transparent z-50 absolute w-full h-full overflow-y-hidden'>
-        <NavBar isMobile={isMobile} />
-        <div className="flex w-full h-[90%] md:h-[100%] md:h-full md:py-20 md:px-16 md:pb-32 mt-16 md:mt-0 ">
-          <div className="tColor w-full h-full sm:border overflow-hidden mt-8">
+    <GPUContext.Provider
+      value={GPUTier}
+    >
+      <div className="App">
+        <div className='bg-transparent z-50 absolute w-full h-full overflow-y-hidden'>
+          <NavBar isMobile={isMobile} />
+          <div className="flex w-full h-[90%] md:h-[100%] md:h-full md:py-20 md:px-16 md:pb-32 mt-16 md:mt-0 ">
+            <div className="tColor w-full h-full sm:border overflow-hidden mt-8">
 
-            <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-full md:h-[93%] w-full justify-end text-white md:mb-14 px-4 md:px-16  invisible">
-              <div ref={el => textSections.current[0] = el} className="textSectionOne">
-                <p className="cooper lg:text-9xl sm:text-8xl text-7xl">I'm a</p>
-                <p className="cooper lg:text-9xl sm:text-8xl text-7xl">Frontend</p>
-                <p className="cooper lg:text-9xl sm:text-8xl text-7xl">Engineer</p>
-                <p className="cooper lg:text-4xl sm:text-8xl text-2xl">with startup experience</p>
-                <p className="cooper lg:text-4xl sm:text-8xl text-2xl mb-32 md:mb-8 md:mt-2">based in New York City.</p>
-              </div>
-            </div>
-
-            <div ref={el => sections.current[1] = el} className="flex fixed flex-col h-full w-full text-white pt-8 md:pt-0 px-4 md:px-0 invisible">
-              <div ref={el => textSections.current[1] = el} >
-
-                <div
-                  className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                  onMouseEnter={() => handleHover(0, true)}
-                  onMouseLeave={() => handleHover(0, false)}
-                  ref={el => projectSection.current[0] = el} 
-                >
-                  <div ref={el => projectBg.current[0] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
-                  <div className="flex flex-col justify-center z-50">
-                    <div
-                      className="text-6xl bg-clip-text"
-                      ref={el => projectTitle.current[0] = el} 
-                    >
-                      Spotlist
-                    </div>
-                    <div 
-                      className="text-sm"
-                      ref={el => projectStack.current[0] = el} 
-                    >
-                      React Native / Django / AWS Elastic Beanstalk
-                    </div>
-                  </div>
-                  <a className="z-50" target="_blank" href="https://www.github.com">
-                    <div 
-                      className="text-lg underline z-50"
-                      ref={el => projectLink.current[0] = el} 
-                    >
-                      website
-                    </div>
-                  </a>
-                </div>
-
-                <div
-                  className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                  onMouseEnter={() => handleHover(1, true)}
-                  onMouseLeave={() => handleHover(1, false)}
-                  ref={el => projectSection.current[1] = el} 
-                >
-                  <div ref={el => projectBg.current[1] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
-                  <div className="flex flex-col justify-center z-50">
-                    <div
-                      className="text-6xl bg-clip-text"
-                      ref={el => projectTitle.current[1] = el} 
-                    >
-                      Hotswaps
-                    </div>
-                    <div 
-                      className="text-sm"
-                      ref={el => projectStack.current[1] = el} 
-                    >
-                      React / TailwindCSS / Node / Express / PostgreSQL / AWS
-                    </div>
-                  </div>
-                  <a className="z-50" target="_blank" href="https://www.github.com">
-                    <div 
-                      className="text-lg underline z-50"
-                      ref={el => projectLink.current[1] = el} 
-                    >
-                      website
-                    </div>
-                  </a>
-                </div>
-
-                <div
-                  className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                  onMouseEnter={() => handleHover(2, true)}
-                  onMouseLeave={() => handleHover(2, false)}
-                  ref={el => projectSection.current[2] = el} 
-                >
-                  <div ref={el => projectBg.current[2] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
-                  <div className="flex flex-col justify-center z-50">
-                    <div
-                      className="text-6xl bg-clip-text"
-                      ref={el => projectTitle.current[2] = el} 
-                    >
-                      AudioAnalyzer
-                    </div>
-                    <div 
-                      className="text-sm"
-                      ref={el => projectStack.current[2] = el} 
-                    >
-                      React / TailwindCSS / Node / Express / PostgreSQL / AWS
-                    </div>
-                  </div>
-                  <a className="z-50" target="_blank" href="https://www.github.com">
-                    <div 
-                      className="text-lg underline z-50"
-                      ref={el => projectLink.current[2] = el} 
-                    >
-                      website
-                    </div>
-                  </a>
-                </div>
-
-                <div
-                  className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                  onMouseEnter={() => handleHover(3, true)}
-                  onMouseLeave={() => handleHover(3, false)}
-                  ref={el => projectSection.current[3] = el} 
-                >
-                  <div ref={el => projectBg.current[3] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
-                  <div className="flex flex-col justify-center z-50">
-                    <div
-                      className="text-6xl bg-clip-text"
-                      ref={el => projectTitle.current[3] = el} 
-                    >
-                      Client-Server Network Visualization
-                    </div>
-                    <div 
-                      className="text-sm"
-                      ref={el => projectStack.current[3] = el} 
-                    >
-                      React / TailwindCSS / Node / Express / PostgreSQL / AWS
-                    </div>
-                  </div>
-                  <a className="z-50" target="_blank" href="https://www.github.com">
-                    <div 
-                      className="text-lg underline z-50"
-                      ref={el => projectLink.current[3] = el} 
-                    >
-                      website
-                    </div>
-                  </a>
-                </div>
-
-                <div
-                  className="accordion flex justify-between items-center border-t-2 border-b-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                  onMouseEnter={() => handleHover(4, true)}
-                  onMouseLeave={() => handleHover(4, false)}
-                  ref={el => projectSection.current[4] = el} 
-                >
-                  <div ref={el => projectBg.current[4] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
-                  <div className="flex flex-col justify-center z-50">
-                    <div
-                      className="text-6xl bg-clip-text"
-                      ref={el => projectTitle.current[4] = el} 
-                    >
-                      Algorithm Visualizer
-                    </div>
-                    <div 
-                      className="text-sm"
-                      ref={el => projectStack.current[4] = el} 
-                    >
-                      React / TailwindCSS / Node / Express / PostgreSQL / AWS
-                    </div>
-                  </div>
-                  <a className="z-50" target="_blank" href="https://www.github.com">
-                    <div 
-                      className="text-lg underline z-50"
-                      ref={el => projectLink.current[4] = el} 
-                    >
-                      website
-                    </div>
-                  </a>
-                </div>
-
-
-
-              </div>
-            </div>
-
-            <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
-            <div ref={el => textSections.current[2] = el} >
-                About Me
-                <div>
-                  My Interests include
-                   <p>Soccer</p>
-                   <p>Guitar</p>
-                   <p>Snowboarding</p>
-                   <p>Skateboarding</p>
-                   <p>Cards</p>
+              <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-full md:h-[93%] w-full justify-end text-white md:mb-14 px-4 md:px-16  invisible">
+                <div ref={el => textSections.current[0] = el} className="textSectionOne">
+                  <p className="cooper lg:text-9xl sm:text-8xl text-7xl">I'm a</p>
+                  <p className="cooper lg:text-9xl sm:text-8xl text-7xl">Frontend</p>
+                  <p className="cooper lg:text-9xl sm:text-8xl text-7xl">Engineer</p>
+                  <p className="cooper lg:text-4xl sm:text-8xl text-2xl">with startup experience</p>
+                  <p className="cooper lg:text-4xl sm:text-8xl text-2xl mb-32 md:mb-8 md:mt-2">based in New York City.</p>
                 </div>
               </div>
-            </div>
 
-            <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
-            <div ref={el => textSections.current[3] = el} >
-                Contact Me
-                <div>
-                  Form? Or Email?
+              <div ref={el => sections.current[1] = el} className="flex fixed flex-col h-full w-full text-white pt-8 md:pt-0 px-4 md:px-0 invisible">
+                <div ref={el => textSections.current[1] = el} >
+
+                  <div
+                    className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    onMouseEnter={() => handleHover(0, true)}
+                    onMouseLeave={() => handleHover(0, false)}
+                    ref={el => projectSection.current[0] = el} 
+                  >
+                    <div ref={el => projectBg.current[0] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                    <div className="flex flex-col justify-center z-50">
+                      <div
+                        className="text-6xl bg-clip-text"
+                        ref={el => projectTitle.current[0] = el} 
+                      >
+                        Spotlist
+                      </div>
+                      <div 
+                        className="text-sm"
+                        ref={el => projectStack.current[0] = el} 
+                      >
+                        React Native / Django / AWS Elastic Beanstalk
+                      </div>
+                    </div>
+                    <a className="z-50" target="_blank" href="https://www.github.com">
+                      <div 
+                        className="text-lg underline z-50"
+                        ref={el => projectLink.current[0] = el} 
+                      >
+                        website
+                      </div>
+                    </a>
+                  </div>
+
+                  <div
+                    className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    onMouseEnter={() => handleHover(1, true)}
+                    onMouseLeave={() => handleHover(1, false)}
+                    ref={el => projectSection.current[1] = el} 
+                  >
+                    <div ref={el => projectBg.current[1] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                    <div className="flex flex-col justify-center z-50">
+                      <div
+                        className="text-6xl bg-clip-text"
+                        ref={el => projectTitle.current[1] = el} 
+                      >
+                        Hotswaps
+                      </div>
+                      <div 
+                        className="text-sm"
+                        ref={el => projectStack.current[1] = el} 
+                      >
+                        React / TailwindCSS / Node / Express / PostgreSQL / AWS
+                      </div>
+                    </div>
+                    <a className="z-50" target="_blank" href="https://www.github.com">
+                      <div 
+                        className="text-lg underline z-50"
+                        ref={el => projectLink.current[1] = el} 
+                      >
+                        website
+                      </div>
+                    </a>
+                  </div>
+
+                  <div
+                    className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    onMouseEnter={() => handleHover(2, true)}
+                    onMouseLeave={() => handleHover(2, false)}
+                    ref={el => projectSection.current[2] = el} 
+                  >
+                    <div ref={el => projectBg.current[2] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                    <div className="flex flex-col justify-center z-50">
+                      <div
+                        className="text-6xl bg-clip-text"
+                        ref={el => projectTitle.current[2] = el} 
+                      >
+                        AudioAnalyzer
+                      </div>
+                      <div 
+                        className="text-sm"
+                        ref={el => projectStack.current[2] = el} 
+                      >
+                        React / TailwindCSS / Node / Express / PostgreSQL / AWS
+                      </div>
+                    </div>
+                    <a className="z-50" target="_blank" href="https://www.github.com">
+                      <div 
+                        className="text-lg underline z-50"
+                        ref={el => projectLink.current[2] = el} 
+                      >
+                        website
+                      </div>
+                    </a>
+                  </div>
+
+                  <div
+                    className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    onMouseEnter={() => handleHover(3, true)}
+                    onMouseLeave={() => handleHover(3, false)}
+                    ref={el => projectSection.current[3] = el} 
+                  >
+                    <div ref={el => projectBg.current[3] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                    <div className="flex flex-col justify-center z-50">
+                      <div
+                        className="text-6xl bg-clip-text"
+                        ref={el => projectTitle.current[3] = el} 
+                      >
+                        Client-Server Network Visualization
+                      </div>
+                      <div 
+                        className="text-sm"
+                        ref={el => projectStack.current[3] = el} 
+                      >
+                        React / TailwindCSS / Node / Express / PostgreSQL / AWS
+                      </div>
+                    </div>
+                    <a className="z-50" target="_blank" href="https://www.github.com">
+                      <div 
+                        className="text-lg underline z-50"
+                        ref={el => projectLink.current[3] = el} 
+                      >
+                        website
+                      </div>
+                    </a>
+                  </div>
+
+                  <div
+                    className="accordion flex justify-between items-center border-t-2 border-b-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    onMouseEnter={() => handleHover(4, true)}
+                    onMouseLeave={() => handleHover(4, false)}
+                    ref={el => projectSection.current[4] = el} 
+                  >
+                    <div ref={el => projectBg.current[4] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                    <div className="flex flex-col justify-center z-50">
+                      <div
+                        className="text-6xl bg-clip-text"
+                        ref={el => projectTitle.current[4] = el} 
+                      >
+                        Algorithm Visualizer
+                      </div>
+                      <div 
+                        className="text-sm"
+                        ref={el => projectStack.current[4] = el} 
+                      >
+                        React / TailwindCSS / Node / Express / PostgreSQL / AWS
+                      </div>
+                    </div>
+                    <a className="z-50" target="_blank" href="https://www.github.com">
+                      <div 
+                        className="text-lg underline z-50"
+                        ref={el => projectLink.current[4] = el} 
+                      >
+                        website
+                      </div>
+                    </a>
+                  </div>
+
+
+
+                </div>
+              </div>
+
+              <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
+              <div ref={el => textSections.current[2] = el} >
+                  About Me
                   <div>
-                    <button>form</button>
-                    <button>email</button>
+                    My Interests include
+                    <p>Soccer</p>
+                    <p>Guitar</p>
+                    <p>Snowboarding</p>
+                    <p>Skateboarding</p>
+                    <p>Cards</p>
                   </div>
                 </div>
               </div>
-            </div>
 
+              <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
+              <div ref={el => textSections.current[3] = el} >
+                  Contact Me
+                  <div>
+                    Form? Or Email?
+                    <div>
+                      <button>form</button>
+                      <button>email</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
+          {/* <div className="scrollTextContainer w-full h-max-content flex justify-center mt-8">
+            <p className="scrollText">Scroll to continue</p>
+          </div> */}  
         </div>
-        {/* <div className="scrollTextContainer w-full h-max-content flex justify-center mt-8">
-          <p className="scrollText">Scroll to continue</p>
-        </div> */}
+          <Experience isMobile={isMobile} />
       </div>
-      <Experience isMobile={isMobile} />
-    </div>
+    </GPUContext.Provider>
   )
 }
 
