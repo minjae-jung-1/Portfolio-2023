@@ -178,8 +178,8 @@ function App() {
       <div className="App">
         <div className='bg-transparent z-50 absolute w-full h-full overflow-y-hidden'>
           <NavBar isMobile={isMobile} />
-          <div className="flex w-full h-[90%] md:h-[100%] md:h-full md:py-20 md:px-16 md:pb-32 mt-16 md:mt-0 ">
-            <div className="tColor w-full h-full sm:border overflow-hidden mt-8">
+          <div className="flex w-full h-[100%] md:h-full md:py-20 md:px-16 md:pb-16 mt-16 md:mt-0 ">
+            <div className="tColor w-full h-full sm:border overflow-hidden mt-0">
 
               <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-full md:h-[93%] w-full justify-end text-white md:mb-14 px-4 md:px-16  invisible">
                 <div ref={el => textSections.current[0] = el} className="textSectionOne">
@@ -282,7 +282,7 @@ function App() {
                         className="text-lg underline z-50"
                         ref={el => projectLink.current[2] = el} 
                       >
-                        website
+                        github
                       </div>
                     </a>
                   </div>
@@ -313,7 +313,7 @@ function App() {
                         className="text-lg underline z-50"
                         ref={el => projectLink.current[3] = el} 
                       >
-                        website
+                        github
                       </div>
                     </a>
                   </div>
@@ -344,7 +344,7 @@ function App() {
                         className="text-lg underline z-50"
                         ref={el => projectLink.current[4] = el} 
                       >
-                        website
+                        github
                       </div>
                     </a>
                   </div>
@@ -354,17 +354,22 @@ function App() {
                 </div>
               </div>
 
-              <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
-              <div ref={el => textSections.current[2] = el} >
-                  About Me
-                  <div>
+              <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white invisible">
+              <div ref={el => textSections.current[2] = el} className="flex" >
+                <div className="w-1/2 h-full">
+                  <img src="https://static.foxnews.com/foxnews.com/content/uploads/2023/03/Kim-Jong-Un.jpg" />
+                </div>
+                <div className="w-1/2">
+                  rwar
+                </div>
+                  {/* <div>
                     My Interests include
                     <p>Soccer</p>
                     <p>Guitar</p>
                     <p>Snowboarding</p>
                     <p>Skateboarding</p>
                     <p>Cards</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
