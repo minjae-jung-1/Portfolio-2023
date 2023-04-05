@@ -355,12 +355,18 @@ function App() {
               </div>
 
               <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white invisible">
-              <div ref={el => textSections.current[2] = el} className="flex" >
-                <div className="w-1/2 h-full">
-                  <img src="https://static.foxnews.com/foxnews.com/content/uploads/2023/03/Kim-Jong-Un.jpg" />
-                </div>
-                <div className="w-1/2">
-                  rwar
+              <div ref={el => textSections.current[2] = el} className="flex w-full h-full px-4 md:px-12 py-12" >
+                <div className="w-full h-full flex flex-col justify-end ">
+                  {/* <h1 className="lg:text-[20rem] sm:text-8xl text-7xl">About Me</h1> */}
+                  <p className="text-6xl leading-[68px]">
+                    Hello, there! My name is Minjae Jung. 
+                    I am a front-end engineer. 
+                    I've done e-commerce stuff at Against All Odds 
+                    and startup stuff at Spotlist, Inc. 
+                    Besides working on digital projects, 
+                    I like playing my guitar, drawing, and 
+                    grinding rails at the skatepark.
+                  </p>
                 </div>
                   {/* <div>
                     My Interests include
