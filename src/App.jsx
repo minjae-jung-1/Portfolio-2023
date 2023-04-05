@@ -179,7 +179,7 @@ function App() {
         <div className='bg-transparent z-50 absolute w-full h-full overflow-y-hidden'>
           <NavBar isMobile={isMobile} />
           <div className="flex w-full h-[100%] md:h-full md:py-20 md:px-16 md:pb-16 mt-16 md:mt-0 ">
-            <div className="tColor w-full h-full sm:border overflow-hidden mt-0">
+            <div className="tColor w-full h-[93%] md:h-full sm:border overflow-hidden mt-0">
 
               <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-full md:h-[93%] w-full justify-end text-white md:mb-14 px-4 md:px-16  invisible">
                 <div ref={el => textSections.current[0] = el} className="textSectionOne">
@@ -191,19 +191,19 @@ function App() {
                 </div>
               </div>
 
-              <div ref={el => sections.current[1] = el} className="flex fixed flex-col h-full w-full text-white pt-8 md:pt-0 px-4 md:px-0 invisible">
-                <div ref={el => textSections.current[1] = el} >
+              <div ref={el => sections.current[1] = el} className="flex fixed flex-col h-full w-full text-white md:pt-0 md:px-0 invisible">
+                <div ref={el => textSections.current[1] = el} className="h-full" >
 
                   <div
-                    className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
                     onMouseEnter={() => handleHover(0, true)}
                     onMouseLeave={() => handleHover(0, false)}
                     ref={el => projectSection.current[0] = el} 
                   >
-                    <div ref={el => projectBg.current[0] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                    <div ref={el => projectBg.current[0] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
                       <div
-                        className="text-6xl bg-clip-text"
+                        className="text-3xl md:text-6xl bg-clip-text"
                         ref={el => projectTitle.current[0] = el} 
                       >
                         Spotlist
@@ -226,15 +226,15 @@ function App() {
                   </div>
 
                   <div
-                    className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
                     onMouseEnter={() => handleHover(1, true)}
                     onMouseLeave={() => handleHover(1, false)}
                     ref={el => projectSection.current[1] = el} 
                   >
-                    <div ref={el => projectBg.current[1] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                    <div ref={el => projectBg.current[1] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
                       <div
-                        className="text-6xl bg-clip-text"
+                        className="text-3xl md:text-6xl bg-clip-text"
                         ref={el => projectTitle.current[1] = el} 
                       >
                         Hotswaps
@@ -257,15 +257,15 @@ function App() {
                   </div>
 
                   <div
-                    className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
                     onMouseEnter={() => handleHover(2, true)}
                     onMouseLeave={() => handleHover(2, false)}
                     ref={el => projectSection.current[2] = el} 
                   >
-                    <div ref={el => projectBg.current[2] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                    <div ref={el => projectBg.current[2] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
                       <div
-                        className="text-6xl bg-clip-text"
+                        className="text-3xl md:text-6xl bg-clip-text"
                         ref={el => projectTitle.current[2] = el} 
                       >
                         AudioAnalyzer
@@ -288,15 +288,15 @@ function App() {
                   </div>
 
                   <div
-                    className="accordion flex justify-between items-center border-t-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
                     onMouseEnter={() => handleHover(3, true)}
                     onMouseLeave={() => handleHover(3, false)}
                     ref={el => projectSection.current[3] = el} 
                   >
-                    <div ref={el => projectBg.current[3] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                    <div ref={el => projectBg.current[3] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
                       <div
-                        className="text-6xl bg-clip-text"
+                        className="text-2xl md:text-6xl bg-clip-text"
                         ref={el => projectTitle.current[3] = el} 
                       >
                         Client-Server Network Visualization
@@ -319,15 +319,15 @@ function App() {
                   </div>
 
                   <div
-                    className="accordion flex justify-between items-center border-t-2 border-b-2 h-36 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    className="accordion flex justify-between items-center border-t-2 border-b-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
                     onMouseEnter={() => handleHover(4, true)}
                     onMouseLeave={() => handleHover(4, false)}
                     ref={el => projectSection.current[4] = el} 
                   >
-                    <div ref={el => projectBg.current[4] = el}  className="absolute h-36 w-full bg-white ml-[-2rem]" />
+                    <div ref={el => projectBg.current[4] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
                       <div
-                        className="text-6xl bg-clip-text"
+                        className="text-2xl md:text-6xl bg-clip-text"
                         ref={el => projectTitle.current[4] = el} 
                       >
                         Algorithm Visualizer
