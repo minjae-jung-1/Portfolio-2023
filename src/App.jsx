@@ -7,6 +7,7 @@ import { useDetectGPU } from "@react-three/drei";
 import useWidthBreakpointReached from "./utils/Hooks";
 import Experience from './experience/Experience';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 export const GPUContext = createContext(null)
 
@@ -178,7 +179,7 @@ function App() {
       <div className="App">
         <div className='bg-transparent z-50 absolute w-full h-full overflow-y-hidden'>
           <NavBar isMobile={isMobile} />
-          <div className="flex w-full h-[100%] md:h-full md:py-20 md:px-16 md:pb-16 mt-16 md:mt-0 ">
+          <div className="flex w-full h-full md:h-[92%] md:pt-20 md:px-16 mt-16 md:mt-0 ">
             <div className="tColor w-full h-[93%] md:h-full sm:border overflow-hidden mt-0">
 
               <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-full md:h-[93%] w-full justify-end text-white md:mb-14 px-4 md:px-16  invisible">
@@ -195,7 +196,7 @@ function App() {
                 <div ref={el => textSections.current[1] = el} className="h-full" >
 
                   <div
-                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden"
                     onMouseEnter={() => handleHover(0, true)}
                     onMouseLeave={() => handleHover(0, false)}
                     ref={el => projectSection.current[0] = el} 
@@ -394,9 +395,7 @@ function App() {
 
             </div>
           </div>
-          {/* <div className="scrollTextContainer w-full h-max-content flex justify-center mt-8">
-            <p className="scrollText">Scroll to continue</p>
-          </div> */}  
+          <Footer />
         </div>
           <Experience isMobile={isMobile} />
       </div>
