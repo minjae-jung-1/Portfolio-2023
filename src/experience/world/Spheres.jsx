@@ -1,14 +1,16 @@
+import { useEffect, useRef, useMemo, useContext } from "react";
 import { useThree } from "@react-three/fiber"
 import { useSphere } from "@react-three/cannon"
 import { useFrame } from '@react-three/fiber'
-import { useEffect, useRef, useMemo } from "react";
+
+import { GPUContext } from "../../App";
 
 function Spheres({ isMobile }) {
 
-  // const sphereArgs = isMobile ? [6, 16, 16] : [4, 32, 32];
+  const { tier } = useContext(GPUContext)
 
   const sphereArgs = 
-    isMobile ? { 
+    (tier >= 2) ? { 
       geometryArgs: [6, 16, 16],
       initialPos: [((1 - Math.random()) * 60) + 10, (0.5 - Math.random()) * 70, (1 - Math.random()) * 20],
     } : {
@@ -46,5 +48,3 @@ function Spheres({ isMobile }) {
 }
 
 export default Spheres;
-
-//args={[null, null, count]} 
