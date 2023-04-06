@@ -1,13 +1,27 @@
-function Footer() {
+import React from 'react'
+
+const Footer = React.forwardRef((props, ref ) => {
+  console.log(ref.current)
   return (
     <footer className="flex w-full h-[8%] justify-between items-center px-4 md:px-16">
       <div className="flex w-32 justify-between items-center overflow-hidden gap-x-4">
-        <p className="mt-0.5">Home</p>
-        <div className="flex w-full justify-between overflow-hidden">
-          <div className="border w-2 h-2 rounded-[50%]" />
-          <div className="border w-2 h-2 rounded-[50%]" />
-          <div className="border w-2 h-2 rounded-[50%]" />
-          <div className="border w-2 h-2 rounded-[50%]" />
+        <p ref={el => ref.current.ref1 = [ el ]} className="ease mt-0.5">Home</p>
+        <p ref={el => ref.current.ref1 = [...ref.current.ref1, el]} className="mt-0.5 invisible fixed">Work</p>
+        <p ref={el => ref.current.ref1 = [...ref.current.ref1, el]} className="mt-0.5 invisible fixed">About</p>
+        <p ref={el => ref.current.ref1 = [...ref.current.ref1, el]} className="mt-0.5 invisible fixed">Contact</p>
+        <div className="flex h-2 w-32 justify-between overflow-hidden relative">
+          <div className="ease border w-2 h-2 rounded-[50%] z-50 overflow-hidden">
+            <div ref={el => ref.current.ref2 = [ el ]} className="bg-white absolute w-2 h-2" />
+          </div>
+          <div className="ease border w-2 h-2 rounded-[50%] z-50 overflow-hidden">
+            <div ref={el => ref.current.ref2 = [...ref.current.ref2, el]} className="bg-white absolute w-2 h-2" />
+          </div>
+          <div className="ease border w-2 h-2 rounded-[50%] z-50 overflow-hidden">
+            <div ref={el => ref.current.ref2 = [...ref.current.ref2, el]} className="bg-white absolute w-2 h-2" />
+          </div>
+          <div className="ease border w-2 h-2 rounded-[50%] z-50 overflow-hidden">
+            <div ref={el => ref.current.ref2 = [...ref.current.ref2, el]} className="bg-white absolute w-2 h-2" />
+          </div>
         </div>
       </div>
       <div className="flex w-28 justify-between">
@@ -21,6 +35,6 @@ function Footer() {
       </div>
     </footer>
   )
-}
+})
 
 export default Footer;

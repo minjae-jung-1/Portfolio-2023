@@ -19,6 +19,7 @@ function App() {
 
   const GPUTier = useDetectGPU()
 
+  // Main Refs
   const sections = useRef([]);
   
   const textSections = useRef([]);
@@ -32,6 +33,9 @@ function App() {
   let currentIndex = -1,
       wrap,
       animating;
+
+  // Footer Refs
+  const footerRefs = useRef({});
 
   useLayoutEffect(() => {
 
@@ -63,9 +67,13 @@ function App() {
 
     wrap = gsap.utils.wrap(0, sections.current.length)
 
-    goToSection(0, 1);
+    goToSection(0);
 
     isLoaded = true
+
+    gsap.set(footerRefs.current.ref2, {
+      xPercent: -100
+    })
 
   }, [])  
   
@@ -79,6 +87,11 @@ function App() {
       onComplete: () => animating = false
     })
 
+    if (index > 0) {
+      gsap.to(footerRefs.current.ref2[index], {
+        xPercent: 0,
+      })
+    }
 
     if(isLoaded !== false){
       if (currentIndex >= 0) {
@@ -91,7 +104,6 @@ function App() {
       gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 1, delay: .5 })
       gsap.to(textSections.current[index], { opacity: 1, duration: .5, delay: .5 })
     }
-    // Disappear current section
     
     // Turn on blur
     if (currentIndex === 0) {
@@ -105,9 +117,11 @@ function App() {
         duration: 1.5,
         delay: .5
       })
+
     }
 
     if (index === 0) {
+      // Turn off blur if title section
       gsap.to(".tColor", {
         backdropFilter: "saturate(0%)",
         duration: 1,
@@ -119,7 +133,20 @@ function App() {
         delay: .5
       })
       gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 1, delay: .5 })
+
+      for (let i = 1; i < footerRefs.current.ref2.length; i++) {
+        gsap.to(footerRefs.current.ref2[i], {
+          xPercent: -100
+        })
+      }
+
+      gsap.to(footerRefs.current.ref2[index], {
+        xPercent: 0,
+        delay: 1.5
+      })
+
     }
+
     currentIndex = index;
 
     for (let i = 0; i < projectBg.current.length; i++) {
@@ -129,20 +156,9 @@ function App() {
     }
   }
 
-  // const projectSection = useRef([]);
-  // const projectTitle = useRef([]);
-  // const projectStack = useRef([]);
-  // const projectLink = useRef([]);
-  // const projectBg = useRef([]);
-
   function handleHover(index, hovering) {
 
     const textElements = [projectTitle.current[index], projectStack.current[index], projectLink.current[index]];
-
-    console.log(textElements)
-
-    console.log('project',projectTitle)
-
 
     if (hovering){
       gsap.to(projectBg.current[index], {
@@ -394,9 +410,9 @@ function App() {
 
             </div>
           </div>
-          <Footer />
+          <Footer ref={footerRefs} />
         </div>
-          <Experience isMobile={isMobile} />
+        <Experience isMobile={isMobile} />
       </div>
     </GPUContext.Provider>
   )
@@ -406,7 +422,6 @@ export default App;
 
 // fonts
 // name - Anton, Luckiest Guy, Bungee Shade
-
 
 // ideas
 // 1. Navigation in NavBar -> dot dot sectionName dot dot
