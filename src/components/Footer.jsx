@@ -1,12 +1,14 @@
 function Footer() {
   return (
     <footer className="flex w-full h-[8%] justify-between items-center px-4 md:px-16">
-      <div className="flex w-32 justify-between items-center overflow-hidden">
+      <div className="flex w-32 justify-between items-center overflow-hidden gap-x-4">
         <p className="mt-0.5">Home</p>
-        <div className="border w-2 h-2 rounded-[50%]" />
-        <div className="border w-2 h-2 rounded-[50%]" />
-        <div className="border w-2 h-2 rounded-[50%]" />
-        <div className="border w-2 h-2 rounded-[50%]" />
+        <div className="flex w-full justify-between overflow-hidden">
+          <div className="border w-2 h-2 rounded-[50%]" />
+          <div className="border w-2 h-2 rounded-[50%]" />
+          <div className="border w-2 h-2 rounded-[50%]" />
+          <div className="border w-2 h-2 rounded-[50%]" />
+        </div>
       </div>
       <div className="flex w-28 justify-between">
         <a target="_blank" href="https://github.com/minjae-jung-1">

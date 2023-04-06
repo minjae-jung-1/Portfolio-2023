@@ -11,11 +11,11 @@ function Spheres({ isMobile }) {
 
   const sphereArgs = 
     (tier >= 2) ? { 
+      geometryArgs: [4, 32, 32],
+      initialPos: [((1 - Math.random()) * 40) + 40, (0.5 - Math.random()) * 70, (1 - Math.random()) * 20],
+    } : {
       geometryArgs: [6, 16, 16],
       initialPos: [((1 - Math.random()) * 60) + 10, (0.5 - Math.random()) * 70, (1 - Math.random()) * 20],
-    } : {
-      geometryArgs: [4, 32, 32],
-      initialPos: [((1 - Math.random()) * 40) + 50, (0.5 - Math.random()) * 70, (1 - Math.random()) * 20],
     }
 
 

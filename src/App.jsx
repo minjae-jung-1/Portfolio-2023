@@ -11,7 +11,6 @@ import Footer from './components/Footer';
 
 export const GPUContext = createContext(null)
 
-
 function App() {
 
   gsap.registerPlugin(Observer);
@@ -210,7 +209,7 @@ function App() {
                         Spotlist
                       </div>
                       <div 
-                        className="text-sm"
+                        className="text-lg"
                         ref={el => projectStack.current[0] = el} 
                       >
                         React Native / Django / AWS Elastic Beanstalk
@@ -241,7 +240,7 @@ function App() {
                         Hotswaps
                       </div>
                       <div 
-                        className="text-sm"
+                        className="text-lg"
                         ref={el => projectStack.current[1] = el} 
                       >
                         React / TailwindCSS / Node / Express / PostgreSQL / AWS
@@ -272,7 +271,7 @@ function App() {
                         AudioAnalyzer
                       </div>
                       <div 
-                        className="text-sm"
+                        className="text-lg"
                         ref={el => projectStack.current[2] = el} 
                       >
                         React / TailwindCSS / Node / Express / PostgreSQL / AWS
@@ -303,7 +302,7 @@ function App() {
                         Client-Server Network Visualization
                       </div>
                       <div 
-                        className="text-sm"
+                        className="text-lg"
                         ref={el => projectStack.current[3] = el} 
                       >
                         React / TailwindCSS / Node / Express / PostgreSQL / AWS
@@ -334,7 +333,7 @@ function App() {
                         Algorithm Visualizer
                       </div>
                       <div 
-                        className="text-sm"
+                        className="text-lg"
                         ref={el => projectStack.current[4] = el} 
                       >
                         React / TailwindCSS / Node / Express / PostgreSQL / AWS
@@ -365,7 +364,7 @@ function App() {
                     I've done e-commerce stuff at Against All Odds 
                     and startup stuff at Spotlist, Inc. 
                     Besides working on digital projects, 
-                    I like playing my guitar, drawing, and 
+                    I like playing guitar, drawing, and 
                     grinding rails at the skatepark.
                   </p>
                 </div>
