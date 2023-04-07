@@ -3,11 +3,13 @@ import React from 'react'
 const Footer = React.forwardRef((props, ref ) => {
   return (
     <footer className="flex w-full h-[8%] justify-between items-center px-4 md:px-16">
-      <div className="flex w-32 justify-between items-center overflow-hidden gap-x-4">
-        <p ref={el => ref.current.ref1 = [ el ]} className="ease mt-0.5">Home</p>
-        <p ref={el => ref.current.ref1 = [...ref.current.ref1, el]} className="mt-0.5 invisible fixed">Work</p>
-        <p ref={el => ref.current.ref1 = [...ref.current.ref1, el]} className="mt-0.5 invisible fixed">About</p>
-        <p ref={el => ref.current.ref1 = [...ref.current.ref1, el]} className="mt-0.5 invisible fixed">Contact</p>
+      <div className="flex h-8 w-36 justify-between items-center">
+        <div className="h-full w-full relative overflow-hidden">
+          <p ref={el => ref.current.ref1 = [ el ]} className="ease mt-1.5 absolute">Home</p>
+          <p ref={el => ref.current.ref1 = [...ref.current.ref1, el]} className="mt-1.5 absolute">Work</p>
+          <p ref={el => ref.current.ref1 = [...ref.current.ref1, el]} className="mt-1.5 absolute">About</p>
+          <p ref={el => ref.current.ref1 = [...ref.current.ref1, el]} className="mt-1.5 absolute">Contact</p>
+        </div>
         <div className="flex h-2 w-32 justify-between overflow-hidden relative">
           <div className="ease border w-2 h-2 rounded-[50%] z-50 overflow-hidden">
             <div ref={el => ref.current.ref2 = [ el ]} className="bg-white absolute w-2 h-2" />

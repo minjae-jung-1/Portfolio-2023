@@ -71,9 +71,11 @@ function App() {
 
     isLoaded = true
 
-    gsap.set(footerRefs.current.ref2, {
-      xPercent: -100
-    })
+    for (let i = 1; i < footerRefs.current.ref1.length; i++) {
+      gsap.set(footerRefs.current.ref1[i], {
+        yPercent: -200
+      })
+    }
 
   }, [])  
   
@@ -87,11 +89,22 @@ function App() {
       onComplete: () => animating = false
     })
 
+    let t3 = gsap.timeline()
+
     if (index > 0) {
       gsap.to(footerRefs.current.ref2[index], {
         xPercent: 0,
       })
     }
+
+    t3.to(footerRefs.current.ref1[currentIndex], {
+      yPercent: 200
+    }).set(footerRefs.current.ref1[currentIndex], {
+      yPercent: -200
+    })
+    gsap.to(footerRefs.current.ref1[index], {
+      yPercent: 0
+    })
 
     if(isLoaded !== false){
       if (currentIndex >= 0) {
@@ -117,7 +130,6 @@ function App() {
         duration: 1.5,
         delay: .5
       })
-
     }
 
     if (index === 0) {
@@ -372,9 +384,6 @@ function App() {
                       </div>
                     </a>
                   </div>
-
-
-
                 </div>
               </div>
 
