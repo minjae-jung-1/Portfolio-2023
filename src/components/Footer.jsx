@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Footer = React.forwardRef((props, ref ) => {
-  console.log(ref.current)
   return (
     <footer className="flex w-full h-[8%] justify-between items-center px-4 md:px-16">
       <div className="flex w-32 justify-between items-center overflow-hidden gap-x-4">

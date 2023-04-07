@@ -60,14 +60,14 @@ function App() {
     Observer.create({
       type: "wheel, touch, scroll, pointer",
       wheelSpeed: -1,
-      onDown: () => !animating && goToSection(currentIndex - 1),
-      onUp: () => !animating && goToSection(currentIndex + 1),
+      onDown: () => !animating && goToSection(currentIndex - 1, 1),
+      onUp: () => !animating && goToSection(currentIndex + 1, -1),
       tolerance: 130,
     })
 
     wrap = gsap.utils.wrap(0, sections.current.length)
 
-    goToSection(0);
+    goToSection(0, 1);
 
     isLoaded = true
 
@@ -77,7 +77,7 @@ function App() {
 
   }, [])  
   
-  function goToSection(index) {
+  function goToSection(index, direction) {
 
     index = wrap(index)
     animating = true
@@ -134,6 +134,14 @@ function App() {
       })
       gsap.to(sections.current[index], { autoAlpha: 1, zIndex: 1, duration: 1, delay: .5 })
 
+      if (direction === -1) {
+        for (let i = 1; i < footerRefs.current.ref2.length; i++) {
+          gsap.to(footerRefs.current.ref2[i], {
+            xPercent: 0
+          })
+        }
+      }
+
       for (let i = 1; i < footerRefs.current.ref2.length; i++) {
         gsap.to(footerRefs.current.ref2[i], {
           xPercent: -100
@@ -142,7 +150,7 @@ function App() {
 
       gsap.to(footerRefs.current.ref2[index], {
         xPercent: 0,
-        delay: 1.5
+        delay: 1.2
       })
 
     }
