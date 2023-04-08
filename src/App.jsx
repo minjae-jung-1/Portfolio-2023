@@ -1,4 +1,4 @@
-import { createContext, useLayoutEffect, useRef } from "react";
+import { createContext, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap"
 import { Observer } from "gsap/Observer";
 
@@ -8,6 +8,7 @@ import useWidthBreakpointReached from "./utils/Hooks";
 import Experience from './experience/Experience';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import Form from './components/Form'
 
 export const GPUContext = createContext(null)
 
@@ -22,6 +23,8 @@ function App() {
   const sections = useRef([]);
   
   const textSections = useRef([]);
+
+  const [visible, setVisible] = useState(false)
 
   const projectSection = useRef([]);
   const projectTitle = useRef([]);
@@ -355,10 +358,18 @@ function App() {
               </div>
 
               <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white invisible">
-              <div ref={el => textSections.current[2] = el} className="flex w-full h-full px-4 md:px-12 py-12" >
+              <div ref={el => textSections.current[2] = el} className="flex flex-col w-full h-full px-4 md:px-12 py-12" >
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                  <p>My Interests include</p>
+                  <p>Soccer       </p>
+                  <p>Guitar       </p>
+                  <p>Snowboarding </p>
+                  <p>Skateboarding</p>
+                  <p>Cards</p>
+                </div>
                 <div className="w-full h-full flex flex-col justify-end ">
                   {/* <h1 className="lg:text-[20rem] sm:text-8xl text-7xl">About Me</h1> */}
-                  <p className="text-6xl leading-[68px]">
+                  <p className="lg:text-5xl leading-[68px] md:text-3xl leading-[68px] sm: text-2xl">
                     Hello, there! My name is Minjae Jung. 
                     I am a front-end engineer. 
                     I've done e-commerce stuff at Against All Odds 
@@ -366,27 +377,38 @@ function App() {
                     Besides working on digital projects, 
                     I like playing guitar, drawing, and 
                     grinding rails at the skatepark.
+                    {/* <p>Hello, there! My name is Minjae Jung.</p> 
+                    <p>I am a front-end engineer. </p>
+                    <p>I've done e-commerce stuff at Against All Odds </p>
+                    <p>and startup stuff at Spotlist, Inc. </p>
+                    <p>Besides working on digital projects, </p>
+                    <p>I like playing guitar, drawing, and </p>
+                    <p>grinding rails at the skatepark.</p> */}
                   </p>
                 </div>
-                  {/* <div>
-                    My Interests include
-                    <p>Soccer</p>
-                    <p>Guitar</p>
-                    <p>Snowboarding</p>
-                    <p>Skateboarding</p>
-                    <p>Cards</p>
-                  </div> */}
                 </div>
               </div>
 
               <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
               <div ref={el => textSections.current[3] = el} >
-                  Contact Me
-                  <div>
-                    Form? Or Email?
+                  <div className="sm:text-lg">
+                    Contact Me
+                  </div>
+                  <div className="flex flex-row justify-evenly w-full">
                     <div>
-                      <button>form</button>
-                      <button>email</button>
+                      Send an Email
+                      <div>
+                        <a href="mailto:recipient@example.com">
+                          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">email</button>
+                        </a>
+                      </div>
+                    </div>
+                    <div>
+                      Submit a message
+                      <div>
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>{console.log(visible), setVisible(!visible)}}>form</button>
+                      </div>
+                      <Form visible={visible}></Form>
                     </div>
                   </div>
                 </div>
