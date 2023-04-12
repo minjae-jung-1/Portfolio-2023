@@ -17,8 +17,6 @@ const Experience = ({ isMobile }) => {
   return(
     <Canvas shadows gl={{ stencil: false, antialias: false }} camera={{ position: [0, 0, 60 ], fov: 35  }} className="hello">
       <Suspense>
-        {/* <OrbitControls /> */}
-        {/* <fog attach="fog" args={["red", 10, 150]}/> */}
         <color attach="background" args={["#E83F28"]} />
         <ambientLight intensity={.5} />
         <directionalLight position={[-9, -10, -5]} intensity={0.5} />

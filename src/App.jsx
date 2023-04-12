@@ -40,6 +40,7 @@ function App() {
   useLayoutEffect(() => {
 
     const t1 = gsap.timeline();
+    const t4 = gsap.timeline();
 
     t1.from(".ease", {
       y: 400,
@@ -56,6 +57,17 @@ function App() {
       yoyo: true,
       repeat: -1,
     })
+
+    t4.to(".arrow", {
+      y: 10,
+      delay: .5,
+      duration: 1,
+      ease: "Power2.easeOut"
+    }).to (".arrow", {
+      y: 0,
+      duration: 1,
+      ease: "Power2.easeOut"
+    }).repeat(-1)
     
     Observer.create({
       type: "wheel, touch, scroll, pointer",
@@ -218,12 +230,29 @@ function App() {
             <div className="tColor w-full h-[93%] md:h-full sm:border overflow-hidden mt-0">
 
               <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-full md:h-[93%] w-full justify-end text-white md:mb-14 px-4 md:px-16  invisible">
-                <div ref={el => textSections.current[0] = el} className="textSectionOne">
-                  <p className="cooper lg:text-9xl sm:text-8xl text-7xl">I'm a</p>
-                  <p className="cooper lg:text-9xl sm:text-8xl text-7xl">Frontend</p>
-                  <p className="cooper lg:text-9xl sm:text-8xl text-7xl">Engineer</p>
-                  <p className="cooper lg:text-4xl sm:text-8xl text-2xl">with startup experience</p>
-                  <p className="cooper lg:text-4xl sm:text-8xl text-2xl mb-32 md:mb-8 md:mt-2">based in New York City.</p>
+                <div ref={el => textSections.current[0] = el} className="textSectionOne flex">
+                  <div className="w-5/6">
+                    <p className="luckiestGuy lg:text-[12rem] sm:text-8xl text-7xl">I'm a</p>
+                    <p className="luckiestGuy lg:text-[12rem] sm:text-8xl text-7xl">Frontend</p>
+                    <p className="luckiestGuy lg:text-[12rem] sm:text-8xl text-7xl">Engineer</p>
+                    <p className="luckiestGuy lg:text-6xl sm:text-8xl text-2xl">with startup experience</p>
+                    <p className="luckiestGuy lg:text-6xl sm:text-8xl text-2xl mb-32 md:mb-8 md:mt-4">based in New York City.</p>
+                  </div>
+                  <div className="w-1/6 flex justify-end items-end">
+                    <div className="arrow flex flex-col gap-y-12 mb-10">
+                      <div className="-rotate-90 mb-4">Scroll to continue</div>
+                      <div>
+                        <svg
+                          className="w-full"
+                          viewBox="0 0 24 24" 
+                          width="24px" 
+                          height="24px"
+                          fill="white">
+                            <path d="M 11 1 L 11 19 L 8 19 L 12 23 L 16 19 L 13 19 L 13 1 L 11 1 z"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -238,8 +267,11 @@ function App() {
                   >
                     <div ref={el => projectBg.current[0] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
+                      <div className="text-lg mb-4">
+                        Employment
+                      </div>
                       <div
-                        className="text-3xl md:text-6xl bg-clip-text"
+                        className="luckiestGuy text-3xl md:text-6xl bg-clip-text"
                         ref={el => projectTitle.current[0] = el} 
                       >
                         Spotlist
@@ -251,7 +283,7 @@ function App() {
                         React Native / Django / AWS Elastic Beanstalk
                       </div>
                     </div>
-                    <a className="z-50" target="_blank" href="https://www.github.com">
+                    <a className="z-50" target="_blank" href="https://www.spotlistinc.com/">
                       <div 
                         className="text-lg underline z-50"
                         ref={el => projectLink.current[0] = el} 
@@ -270,7 +302,7 @@ function App() {
                     <div ref={el => projectBg.current[1] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
                       <div
-                        className="text-3xl md:text-6xl bg-clip-text"
+                        className="luckiestGuy text-3xl md:text-6xl bg-clip-text"
                         ref={el => projectTitle.current[1] = el} 
                       >
                         Hotswaps
@@ -301,7 +333,7 @@ function App() {
                     <div ref={el => projectBg.current[2] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
                       <div
-                        className="text-3xl md:text-6xl bg-clip-text"
+                        className="luckiestGuy text-3xl md:text-6xl bg-clip-text"
                         ref={el => projectTitle.current[2] = el} 
                       >
                         AudioAnalyzer
@@ -332,7 +364,7 @@ function App() {
                     <div ref={el => projectBg.current[3] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
                       <div
-                        className="text-2xl md:text-6xl bg-clip-text"
+                        className="luckiestGuy text-2xl md:text-6xl bg-clip-text"
                         ref={el => projectTitle.current[3] = el} 
                       >
                         Client-Server Network Visualization
@@ -363,7 +395,7 @@ function App() {
                     <div ref={el => projectBg.current[4] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
                       <div
-                        className="text-2xl md:text-6xl bg-clip-text"
+                        className="luckiestGuy text-2xl md:text-6xl bg-clip-text"
                         ref={el => projectTitle.current[4] = el} 
                       >
                         Algorithm Visualizer

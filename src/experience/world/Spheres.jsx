@@ -20,7 +20,7 @@ function Spheres({ isMobile }) {
 
 
   const color = useMemo(() => {
-    const colors = ["#4071B8", "#3C4073", "#EDF7FB"]
+    const colors = ["#1063DE", "#114591"]
     return colors[Math.floor(Math.random() * 2)];
   })
 
