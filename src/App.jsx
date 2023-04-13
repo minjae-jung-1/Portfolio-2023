@@ -229,30 +229,73 @@ function App() {
           <div className="flex w-full h-full md:h-[92%] md:pt-20 md:px-16 mt-16 md:mt-0 ">
             <div className="tColor w-full h-[93%] md:h-full sm:border overflow-hidden mt-0">
 
-              <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-full md:h-[93%] w-full justify-end text-white md:mb-14 px-4 md:px-16  invisible">
+              <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-full md:h-[93%] w-full justify-between text-white md:mb-14 px-4 md:px-16 lg:px-24 2xl:pt-32 lg:pt-16 invisible">
                 <div ref={el => textSections.current[0] = el} className="textSectionOne flex">
-                  <div className="w-5/6">
-                    <p className="luckiestGuy lg:text-[12rem] sm:text-8xl text-7xl">I'm a</p>
-                    <p className="luckiestGuy lg:text-[12rem] sm:text-8xl text-7xl">Frontend</p>
-                    <p className="luckiestGuy lg:text-[12rem] sm:text-8xl text-7xl">Engineer</p>
-                    <p className="luckiestGuy lg:text-6xl sm:text-8xl text-2xl">with startup experience</p>
-                    <p className="luckiestGuy lg:text-6xl sm:text-8xl text-2xl mb-32 md:mb-8 md:mt-4">based in New York City.</p>
-                  </div>
-                  <div className="w-1/6 flex justify-end items-end">
-                    <div className="arrow flex flex-col gap-y-12 mb-10">
-                      <div className="-rotate-90 mb-4">Scroll to continue</div>
-                      <div>
+                  <div className="w-full">
+                    <p className="luckiestGuy lg:text-[15vh] sm:text-8xl text-7xl">I'm a</p>
+                    <p className="luckiestGuy lg:text-[15vh] sm:text-8xl text-7xl">Frontend</p>
+                    <p className="luckiestGuy lg:text-[15vh] sm:text-8xl text-7xl">Engineer</p>
+                    <p className="luckiestGuy 2xl:text-6xl lg:text-4xl md:text-8xl sm:text-8xl text-2xl">with startup experience</p>
+                    <p className="luckiestGuy 2xl:text-6xl lg:text-4xl md:text-8xl sm:text-8xl text-2xl md:mb-4 2xl:mb-8">based in New York City.</p>
+                    {/* {isMobile && (
+                      <>
+                        <div className="arrow flex mb-32 mt-8">
+                          <svg
+                            viewBox="0 0 24 24" 
+                            width="24px" 
+                            height="24px"
+                            fill="white"
+                            >
+                              <path d="M 11 1 L 11 19 L 8 19 L 12 23 L 16 19 L 13 19 L 13 1 L 11 1 z"/>
+                          </svg>
+                          Scroll to continue
+                          <svg
+                            viewBox="0 0 24 24" 
+                            width="24px" 
+                            height="24px"
+                            fill="white"
+                            >
+                              <path d="M 11 1 L 11 19 L 8 19 L 12 23 L 16 19 L 13 19 L 13 1 L 11 1 z"/>
+                          </svg>
+                        </div>
+                      </>
+
+                    )} */}
+                    <div className="flex flex-col 2xl:gap-y-8 lg:gap-y-4 justify-center items-center 2xl:mt-4 2lg:mt-[0vh]">
+                      <div className="flex justify center items-center border rounded-[50%] 2xl:w-[5rem] 2xl:h-[5rem] xl:w-[3rem] xl:h-[3rem]">
                         <svg
-                          className="w-full"
+                          className="w-full arrow"
                           viewBox="0 0 24 24" 
                           width="24px" 
                           height="24px"
-                          fill="white">
+                          fill="white"
+                          >
                             <path d="M 11 1 L 11 19 L 8 19 L 12 23 L 16 19 L 13 19 L 13 1 L 11 1 z"/>
                         </svg>
                       </div>
+                      <div className="2xl:text-base xl:text-x">
+                        Scroll to continue
+                      </div>
                     </div>
                   </div>
+                  {/* {!isMobile && (
+                    <div className="w-1/6 flex justify-end items-end">
+                      <div className="arrow flex flex-col gap-y-12 mb-10">
+                        <div className="-rotate-90 mb-8 text-xl">Scroll to continue</div>
+                        <div>
+                          <svg
+                            className="w-full"
+                            viewBox="0 0 24 24" 
+                            width="24px" 
+                            height="24px"
+                            fill="white"
+                            >
+                              <path d="M 11 1 L 11 19 L 8 19 L 12 23 L 16 19 L 13 19 L 13 1 L 11 1 z"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    )} */}
                 </div>
               </div>
 
