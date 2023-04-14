@@ -90,6 +90,8 @@ function App() {
       })
     }
 
+    console.log(GPUTier)
+
   }, [])  
   
   function goToSection(index, direction) {
@@ -278,7 +280,7 @@ function App() {
                   >
                     <div ref={el => projectBg.current[0] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
-                      <div ref={el => projectHeader.current[0] = el} className="hidden text-[1vh] leading-none mb-4 md:block">
+                      <div ref={el => projectHeader.current[0] = el} className="hidden text-[1.5vh] leading-none mb-4 md:block">
                         App Engineer
                       </div>
                       <div
@@ -312,7 +314,7 @@ function App() {
                   >
                     <div ref={el => projectBg.current[1] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
-                      <div ref={el => projectHeader.current[1] = el} className="hidden text-[1vh] leading-none mb-4 md:block">
+                      <div ref={el => projectHeader.current[1] = el} className="hidden text-[1.5vh] leading-none mb-4 md:block">
                         Co-Founder & Frontend Engineer
                       </div>
                       <div
@@ -346,7 +348,7 @@ function App() {
                   >
                     <div ref={el => projectBg.current[2] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
-                      <div ref={el => projectHeader.current[2] = el} className="hidden text-[1vh] leading-none mb-4 md:block">
+                      <div ref={el => projectHeader.current[2] = el} className="hidden text-[1.5vh] leading-none mb-4 md:block">
                         Project
                       </div>
                       <div
@@ -380,7 +382,7 @@ function App() {
                   >
                     <div ref={el => projectBg.current[3] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
-                      <div ref={el => projectHeader.current[3] = el} className="hidden text-[1vh] leading-none mb-4 md:block">
+                      <div ref={el => projectHeader.current[3] = el} className="hidden text-[1.5vh] leading-none mb-4 md:block">
                         Project
                       </div>
                       <div
@@ -414,7 +416,7 @@ function App() {
                   >
                     <div ref={el => projectBg.current[4] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
-                      <div ref={el => projectHeader.current[4] = el} className="hidden text-[1vh] leading-none mb-4 md:block">
+                      <div ref={el => projectHeader.current[4] = el} className="hidden text-[1.5vh] leading-none mb-4 md:block">
                         Project
                       </div>
                       <div
@@ -446,7 +448,7 @@ function App() {
               <div ref={el => textSections.current[2] = el} className="flex w-full h-full px-4 md:px-12 py-12" >
                 <div className="w-full h-full flex flex-col justify-end ">
                   {/* <h1 className="lg:text-[20rem] sm:text-8xl text-7xl">About Me</h1> */}
-                  <p className="text-[4vh] 3tall:text-[3vh] leading-tight">
+                  <p className="text-[4vh] md:text-[5vh] 3tall:text-[4vh] leading-tight">
                     Hello, there! My name is Minjae Jung. 
                     I am a front-end engineer. 
                     I've done e-commerce stuff at Against All Odds 
