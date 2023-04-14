@@ -29,6 +29,7 @@ function App() {
   const projectStack = useRef([]);
   const projectLink = useRef([]);
   const projectBg = useRef([]);
+  const projectHeader = useRef([]);
   let isLoaded = false;
   let currentIndex = -1,
       wrap,
@@ -190,7 +191,7 @@ function App() {
 
   function handleHover(index, hovering) {
 
-    const textElements = [projectTitle.current[index], projectStack.current[index], projectLink.current[index]];
+    const textElements = [projectTitle.current[index], projectStack.current[index], projectLink.current[index], projectHeader.current[index]];
 
     if (hovering){
       gsap.to(projectBg.current[index], {
@@ -234,8 +235,9 @@ function App() {
                   ref={el => textSections.current[0] = el} 
                   className="textSectionOne h-full flex flex-col justify-between items-between py-24 
                              md:pb-4 md:pt-16
-                             tall:pb-8
-                             2tall:pb-24"
+                             tall:pb-8 tall:pt-20
+                             2tall:pb-12 2tall:pt-28
+                             3tall:pb-24"
                 >
                   <div>
                     <p className="luckiestGuy text-[9vh] lg:text-[12vh] xl:text-[15vh] leading-none">I'm a</p>
@@ -276,17 +278,17 @@ function App() {
                   >
                     <div ref={el => projectBg.current[0] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
-                      <div className="text-lg mb-4">
-                        Employment
+                      <div ref={el => projectHeader.current[0] = el} className="hidden text-[1vh] leading-none mb-4 md:block">
+                        App Engineer
                       </div>
                       <div
-                        className="luckiestGuy text-3xl md:text-6xl bg-clip-text"
+                        className="luckiestGuy text-[3vh] 3tall:text-[3vh] 2tall:leading-tight bg-clip-text"
                         ref={el => projectTitle.current[0] = el} 
                       >
                         Spotlist
                       </div>
                       <div 
-                        className="text-lg"
+                        className="text-sm md:text-lg"
                         ref={el => projectStack.current[0] = el} 
                       >
                         React Native / Django / AWS Elastic Beanstalk
@@ -294,7 +296,7 @@ function App() {
                     </div>
                     <a className="z-50" target="_blank" href="https://www.spotlistinc.com/">
                       <div 
-                        className="text-lg underline z-50"
+                        className="text-sm md:text-lg underline z-50"
                         ref={el => projectLink.current[0] = el} 
                       >
                         website
@@ -310,14 +312,17 @@ function App() {
                   >
                     <div ref={el => projectBg.current[1] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
+                      <div ref={el => projectHeader.current[1] = el} className="hidden text-[1vh] leading-none mb-4 md:block">
+                        Co-Founder & Frontend Engineer
+                      </div>
                       <div
-                        className="luckiestGuy text-3xl md:text-6xl bg-clip-text"
+                        className="luckiestGuy text-[3vh] 3tall:text-[3vh] 2tall:leading-tight bg-clip-text"
                         ref={el => projectTitle.current[1] = el} 
                       >
-                        Hotswaps
+                        Hotswaps, LLC.
                       </div>
                       <div 
-                        className="text-lg"
+                        className="text-sm md:text-lg"
                         ref={el => projectStack.current[1] = el} 
                       >
                         React / TailwindCSS / Node / Express / PostgreSQL / AWS
@@ -325,7 +330,7 @@ function App() {
                     </div>
                     <a className="z-50" target="_blank" href="https://www.github.com">
                       <div 
-                        className="text-lg underline z-50"
+                        className="text-sm md:text-lg underline z-50"
                         ref={el => projectLink.current[1] = el} 
                       >
                         website
@@ -341,14 +346,17 @@ function App() {
                   >
                     <div ref={el => projectBg.current[2] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
+                      <div ref={el => projectHeader.current[2] = el} className="hidden text-[1vh] leading-none mb-4 md:block">
+                        Project
+                      </div>
                       <div
-                        className="luckiestGuy text-3xl md:text-6xl bg-clip-text"
+                        className="luckiestGuy text-[3vh] 3tall:text-[3vh] 2tall:leading-tight bg-clip-text"
                         ref={el => projectTitle.current[2] = el} 
                       >
                         AudioAnalyzer
                       </div>
                       <div 
-                        className="text-lg"
+                        className="text-sm md:text-lg"
                         ref={el => projectStack.current[2] = el} 
                       >
                         React / TailwindCSS / Node / Express / PostgreSQL / AWS
@@ -356,7 +364,7 @@ function App() {
                     </div>
                     <a className="z-50" target="_blank" href="https://www.github.com">
                       <div 
-                        className="text-lg underline z-50"
+                        className="text-sm md:text-lg underline z-50"
                         ref={el => projectLink.current[2] = el} 
                       >
                         github
@@ -372,14 +380,17 @@ function App() {
                   >
                     <div ref={el => projectBg.current[3] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
+                      <div ref={el => projectHeader.current[3] = el} className="hidden text-[1vh] leading-none mb-4 md:block">
+                        Project
+                      </div>
                       <div
-                        className="luckiestGuy text-2xl md:text-6xl bg-clip-text"
+                        className="luckiestGuy text-[3vh] 3tall:text-[3vh] 2tall:leading-tight bg-clip-text"
                         ref={el => projectTitle.current[3] = el} 
                       >
                         Client-Server Network Visualization
                       </div>
                       <div 
-                        className="text-lg"
+                        className="text-sm md:text-lg"
                         ref={el => projectStack.current[3] = el} 
                       >
                         React / TailwindCSS / Node / Express / PostgreSQL / AWS
@@ -387,7 +398,7 @@ function App() {
                     </div>
                     <a className="z-50" target="_blank" href="https://www.github.com">
                       <div 
-                        className="text-lg underline z-50"
+                        className="text-sm md:text-lg underline z-50"
                         ref={el => projectLink.current[3] = el} 
                       >
                         github
@@ -403,14 +414,17 @@ function App() {
                   >
                     <div ref={el => projectBg.current[4] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
+                      <div ref={el => projectHeader.current[4] = el} className="hidden text-[1vh] leading-none mb-4 md:block">
+                        Project
+                      </div>
                       <div
-                        className="luckiestGuy text-2xl md:text-6xl bg-clip-text"
+                        className="luckiestGuy text-[3vh] 3tall:text-[3vh] 2tall:leading-tight bg-clip-text"
                         ref={el => projectTitle.current[4] = el} 
                       >
                         Algorithm Visualizer
                       </div>
                       <div 
-                        className="text-lg"
+                        className="text-sm md:text-lg"
                         ref={el => projectStack.current[4] = el} 
                       >
                         React / TailwindCSS / Node / Express / PostgreSQL / AWS
@@ -418,7 +432,7 @@ function App() {
                     </div>
                     <a className="z-50" target="_blank" href="https://www.github.com">
                       <div 
-                        className="text-lg underline z-50"
+                        className="text-sm md:text-lg underline z-50"
                         ref={el => projectLink.current[4] = el} 
                       >
                         github
@@ -432,7 +446,7 @@ function App() {
               <div ref={el => textSections.current[2] = el} className="flex w-full h-full px-4 md:px-12 py-12" >
                 <div className="w-full h-full flex flex-col justify-end ">
                   {/* <h1 className="lg:text-[20rem] sm:text-8xl text-7xl">About Me</h1> */}
-                  <p className="text-6xl leading-[68px]">
+                  <p className="text-[4vh] 3tall:text-[3vh] leading-tight">
                     Hello, there! My name is Minjae Jung. 
                     I am a front-end engineer. 
                     I've done e-commerce stuff at Against All Odds 
