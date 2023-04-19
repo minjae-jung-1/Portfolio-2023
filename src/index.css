@@ -7,9 +7,19 @@
   src: url("/fonts/LuckiestGuy-Regular.ttf");
 }
 
+
 @font-face {
   font-family: Cooper;
   src: url("/fonts/CooperHewitt/CooperHewitt-Heavy.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Cooper;
+  src: url("/fonts/CooperHewitt/CooperHewitt-Book.otf");
+  font-weight: lighter;
+  font-style: normal;
 }
 
 .luckiestGuy {
