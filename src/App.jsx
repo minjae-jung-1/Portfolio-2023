@@ -8,7 +8,15 @@ import useWidthBreakpointReached from "./utils/Hooks";
 import Experience from './experience/Experience';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Form from './components/Form'
+import Form from './components/Form';
+import skate from './assests/images/skateboard.png'
+import qatar from './assests/images/qatar.png'
+import spade from './assests/images/spade.png'
+import heart from './assests/images/hearts.png'
+import clover from './assests/images/clover.png'
+import diamonds from './assests/images/diamonds.png'
+import guitar from './assests/images/guitar.png'
+import snowboard from './assests/images/snowboard.png'
 
 export const GPUContext = createContext(null)
 
@@ -451,11 +459,27 @@ function App() {
               <div ref={el => textSections.current[2] = el} className="flex flex-col w-full h-full px-4 md:px-12 py-12" >
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                   <p>My Interests include</p>
+                  <p></p>
                   <p>Soccer       </p>
+                  <img src={qatar} className="w-10 lg:w-20"></img>
+
                   <p>Guitar       </p>
+                  <img src={guitar} className="w-10 lg:w-20"></img>
+
                   <p>Snowboarding </p>
+                  <img src={snowboard} className="w-10 lg:w-20"></img>
+
                   <p>Skateboarding</p>
+                  <img src={skate} className="w-10 lg:w-20"></img>
+
                   <p>Cards</p>
+                  <div className="flex flex-row">
+                  <img src={heart} className="w-3 lg:w-8"></img>
+                  <img src={clover} className="w-3 lg:w-8"></img>
+                  <img src={spade} className="w-3 lg:w-8"></img>
+                  <img src={diamonds} className="w-3 lg:w-8"></img>
+                  </div>
+                 
                 </div>
                 <div className="w-full h-full flex flex-col justify-end ">
                   {/* <h1 className="lg:text-[20rem] sm:text-8xl text-7xl">About Me</h1> */}
@@ -496,7 +520,7 @@ function App() {
                     <div>
                       Submit a message
                       <div>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>{console.log(visible), setVisible(!visible)}}>form</button>
+                        <button className="animate-heartbeat bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>{console.log(visible), setVisible(!visible)}}>form</button>
                       </div>
                       <Form visible={visible}></Form>
                     </div>
@@ -522,14 +546,23 @@ export default App;
 // ideas
 // 1. Navigation in NavBar -> dot dot sectionName dot dot
 //  - on mobile this could be on the bottom?
-// 2. 
 
 // https://codepen.io/GreenSock/pen/XWzRraJ
 // add custom mouse circle, goes well with balls
 // https://codepen.io/GreenSock/pen/oNYXzYB
 
+// 2. Add 3D models ( I have atm ) and have it rotateable ... changelles ( Canvas underneath, observer underneath interactions + responsiveness )
+
+
 // To-Do
 // 3. Something wrong going on with mobile landscape and canvas(?), may need resizing?
+// 4. Medium sizing responsive, not sure if we need to do this
+// [  May not be needed.... Images lowkey ugly
+// 5. Try and animate images with css keyframes
+// 6. Add endpoints for form... It might be able to save everything in an s3bucket so we dont need a server(?) aws probably offers something
+// 7. Host images on a bucket or something and abstract from app... can add async code to fetch.
+// 8. Form and Button Styling... can be better
+// ]
 
 // Done
 // 1. Make animation times faster -- DONE
