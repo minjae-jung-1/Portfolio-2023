@@ -375,7 +375,7 @@ function App() {
                         React / TailwindCSS / Node / Express / PostgreSQL / AWS
                       </div>
                     </div>
-                    <a className="z-50" target="_blank" href="https://www.github.com">
+                    <a className="z-50" target="_blank" href="https://github.com/minjae-jung-1/MusicFrequency">
                       <div 
                         className="text-sm md:text-lg underline z-50"
                         ref={el => projectLink.current[2] = el} 
@@ -456,56 +456,27 @@ function App() {
               </div>
 
               <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white invisible">
-              <div ref={el => textSections.current[2] = el} className="flex flex-col w-full h-full px-4 md:px-12 py-12" >
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                  <p>My Interests include</p>
-                  <p></p>
-                  <p>Soccer       </p>
-                  <img src={qatar} className="w-10 lg:w-20"></img>
-
-                  <p>Guitar       </p>
-                  <img src={guitar} className="w-10 lg:w-20"></img>
-
-                  <p>Snowboarding </p>
-                  <img src={snowboard} className="w-10 lg:w-20"></img>
-
-                  <p>Skateboarding</p>
-                  <img src={skate} className="w-10 lg:w-20"></img>
-
-                  <p>Cards</p>
-                  <div className="flex flex-row">
-                  <img src={heart} className="w-3 lg:w-8"></img>
-                  <img src={clover} className="w-3 lg:w-8"></img>
-                  <img src={spade} className="w-3 lg:w-8"></img>
-                  <img src={diamonds} className="w-3 lg:w-8"></img>
+                <div ref={el => textSections.current[2] = el} className="flex flex-col w-full px-4 md:px-12 py-12" >
+                  <div className="w-full h-full flex flex-col justify-end ">
+                    {/* <h1 className="lg:text-[20rem] sm:text-8xl text-7xl">About Me</h1> */}
+                    <p className="text-[4vh] md:text-[5vh] 3tall:text-[4vh] ">
+                      Hello, there! My name is Minjae Jung. 
+                      I am a front-end engineer. 
+                      I've done e-commerce stuff at Against All Odds 
+                      and startup stuff at Spotlist, Inc. 
+                      Besides working on digital projects, 
+                      I like playing guitar, drawing, and 
+                      grinding rails at the skatepark.
+                      {/* <p>Hello, there! My name is Minjae Jung.</p> 
+                      <p>I am a front-end engineer. </p>
+                      <p>I've done e-commerce stuff at Against All Odds </p>
+                      <p>and startup stuff at Spotlist, Inc. </p>
+                      <p>Besides working on digital projects, </p>
+                      <p>I like playing guitar, drawing, and </p>
+                      <p>grinding rails at the skatepark.</p> */}
+                    </p>
                   </div>
-                 
-                </div>
-                <div className="w-full h-full flex flex-col justify-end ">
-                  {/* <h1 className="lg:text-[20rem] sm:text-8xl text-7xl">About Me</h1> */}
-                  <p className="text-[4vh] md:text-[5vh] 3tall:text-[4vh] leading-tight">
-                    Hello, there! My name is Minjae Jung. 
-                    I am a front-end engineer. 
-                    I've done e-commerce stuff at Against All Odds 
-                    and startup stuff at Spotlist, Inc. 
-                    Besides working on digital projects, 
-                    I like playing guitar, drawing, and 
-                    grinding rails at the skatepark.
-                    {/* <p>Hello, there! My name is Minjae Jung.</p> 
-                    <p>I am a front-end engineer. </p>
-                    <p>I've done e-commerce stuff at Against All Odds </p>
-                    <p>and startup stuff at Spotlist, Inc. </p>
-                    <p>Besides working on digital projects, </p>
-                    <p>I like playing guitar, drawing, and </p>
-                    <p>grinding rails at the skatepark.</p> */}
-                  </p>
-                </div>
-                </div>
-              </div>
-
-              <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
-              <div ref={el => textSections.current[3] = el} >
-                  <div className="sm:text-lg">
+                  <div className="sm:text-lg mt-10 text-center">
                     Contact Me
                   </div>
                   <div className="flex flex-row justify-evenly w-full">
@@ -517,16 +488,22 @@ function App() {
                         </a>
                       </div>
                     </div>
-                    <div>
+                    {/* <div>
                       Submit a message
                       <div>
                         <button className="animate-heartbeat bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>{console.log(visible), setVisible(!visible)}}>form</button>
                       </div>
                       <Form visible={visible}></Form>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
+
+              {/* <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
+              <div ref={el => textSections.current[3] = el} >
+                
+                </div>
+              </div> */}
 
             </div>
           </div>
