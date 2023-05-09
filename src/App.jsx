@@ -483,7 +483,7 @@ function App() {
                     <div>
                       Send an Email
                       <div>
-                        <a href="mailto:recipient@example.com">
+                        <a href="mailto:minjaework0t@gmail.com">
                           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">email</button>
                         </a>
                       </div>
