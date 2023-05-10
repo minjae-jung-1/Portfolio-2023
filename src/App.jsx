@@ -240,8 +240,8 @@ function App() {
       <div className="App">
         <div className='bg-transparent z-50 absolute w-full h-full overflow-y-hidden'>
           <NavBar isMobile={isMobile} />
-          <div className="flex w-full h-full md:h-[92%] md:pt-20 md:px-16 mt-16 md:mt-0 ">
-            <div className="tColor w-full h-[93%] md:h-full sm:border overflow-hidden mt-0">
+          <div className="flex w-full h-full md:h-[94%] md:pt-16 md:px-0 mt-14 md:mt-0 ">
+            <div className="tColor w-full h-[93%] md:h-full overflow-hidden mt-0">
 
               <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-full w-full justify-between text-white px-4 md:px-16 lg:px-24 invisible">
                 <div 
@@ -284,7 +284,7 @@ function App() {
                 <div ref={el => textSections.current[1] = el} className="h-full" >
 
                   <div
-                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden"
+                    className="accordion flex justify-between items-center h-1/5 px-8 text-2xl hover:pointer overflow-hidden"
                     onMouseEnter={() => handleHover(0, true)}
                     onMouseLeave={() => handleHover(0, false)}
                     ref={el => projectSection.current[0] = el} 
@@ -420,7 +420,7 @@ function App() {
                   </div>
 
                   <div
-                    className="accordion flex justify-between items-center border-t-2 border-b-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
                     onMouseEnter={() => handleHover(4, true)}
                     onMouseLeave={() => handleHover(4, false)}
                     ref={el => projectSection.current[4] = el} 
@@ -479,10 +479,8 @@ function App() {
                   <img src={spade} className="w-3 lg:w-8"></img>
                   <img src={diamonds} className="w-3 lg:w-8"></img>
                   </div>
-                 
                 </div>
                 <div className="w-full h-full flex flex-col justify-end ">
-                  {/* <h1 className="lg:text-[20rem] sm:text-8xl text-7xl">About Me</h1> */}
                   <p className="text-[4vh] md:text-[5vh] 3tall:text-[4vh] leading-tight">
                     Hello, there! My name is Minjae Jung. 
                     I am a front-end engineer. 
@@ -491,43 +489,10 @@ function App() {
                     Besides working on digital projects, 
                     I like playing guitar, drawing, and 
                     grinding rails at the skatepark.
-                    {/* <p>Hello, there! My name is Minjae Jung.</p> 
-                    <p>I am a front-end engineer. </p>
-                    <p>I've done e-commerce stuff at Against All Odds </p>
-                    <p>and startup stuff at Spotlist, Inc. </p>
-                    <p>Besides working on digital projects, </p>
-                    <p>I like playing guitar, drawing, and </p>
-                    <p>grinding rails at the skatepark.</p> */}
                   </p>
                 </div>
                 </div>
               </div>
-
-              <div ref={el => sections.current[3] = el} className="flex fixed flex-col h-full w-full text-white pt-28 px-14 invisible">
-              <div ref={el => textSections.current[3] = el} >
-                  <div className="sm:text-lg">
-                    Contact Me
-                  </div>
-                  <div className="flex flex-row justify-evenly w-full">
-                    <div>
-                      Send an Email
-                      <div>
-                        <a href="mailto:recipient@example.com">
-                          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">email</button>
-                        </a>
-                      </div>
-                    </div>
-                    <div>
-                      Submit a message
-                      <div>
-                        <button className="animate-heartbeat bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={()=>{console.log(visible), setVisible(!visible)}}>form</button>
-                      </div>
-                      <Form visible={visible}></Form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
           <Footer ref={footerRefs} />
