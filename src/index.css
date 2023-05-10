@@ -22,6 +22,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: Fragment;
+  src: url("/fonts/PPFragment-GlareRegular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .luckiestGuy {
   font-family: "LuckiestGuy";
 }

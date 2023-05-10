@@ -246,17 +246,16 @@ function App() {
               <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-full w-full justify-between text-white px-4 md:px-16 lg:px-24 invisible">
                 <div 
                   ref={el => textSections.current[0] = el} 
-                  className="textSectionOne h-full flex flex-col justify-between items-between py-24 
+                  className="textSectionOne h-full flex flex-col justify-center items-center py-24 
                              md:pb-4 md:pt-16
                              tall:pb-8 tall:pt-20
                              2tall:pb-12 2tall:pt-28
                              3tall:pb-24"
                 >
-                  <div>
-                    <p className="luckiestGuy text-[9vh] lg:text-[12vh] xl:text-[15vh] leading-none">I'm a</p>
-                    <p className="luckiestGuy text-[9vh] lg:text-[12vh] xl:text-[15vh] leading-none">Frontend</p>
-                    <p className="luckiestGuy text-[9vh] lg:text-[12vh] xl:text-[15vh] leading-none">Engineer</p>
-                    <p className="luckiestGuy text-[3vh] lg:text[4vh] lg:text-[5vh] leading-tight mt-2">with startup experience based in New York City.</p>
+                  <div className="flex flex-col items-center">
+                    <p className="font-fragment text-[7vh] lg:text-[12vh] xl:text-[14vh] leading-none mb-4">I'm Minjae,</p>
+                    <p className="font-fragment text-[4vh] lg:text-[12vh] xl:text-[9vh] leading-none mb-8">a Frontend Engineer</p>
+                    <p className="font-fragment text-[3vh] lg:text[4vh] lg:text-[5vh] leading-tight mb-16">with startup experience based in NYC.</p>
                     {/* <p className="luckiestGuy text-2xl sm:text-4xl">based in New York City.</p> */}
                   </div>
                   <div className="flex flex-col 2xl:gap-y-8 gap-y-4 md:gap-y-2 tall:gap-y-8 justify-center items-center 2xl:mt-4">

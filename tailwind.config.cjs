@@ -9,6 +9,9 @@ module.exports = {
         "3tall": { "raw": "(min-height: 1200px)"}
       }
     },
+    fontFamily: {
+      fragment: ["Fragment"]
+    }
   },
   keyframes: {
     heartbeat: {
