@@ -290,20 +290,14 @@ function App() {
                   >
                     <div ref={el => projectBg.current[0] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col justify-center z-50">
-                      <div ref={el => projectHeader.current[0] = el} className="hidden text-[1.5vh] leading-none mb-4 md:block">
+                      <div ref={el => projectHeader.current[0] = el} className="hidden text-[1.5vh] leading-none md:block">
                         App Engineer
                       </div>
                       <div
-                        className="luckiestGuy text-[3vh] 3tall:text-[3vh] 2tall:leading-tight bg-clip-text"
+                        className="font-fragment text-[3vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[0] = el} 
                       >
                         Spotlist
-                      </div>
-                      <div 
-                        className="text-sm md:text-lg"
-                        ref={el => projectStack.current[0] = el} 
-                      >
-                        React Native / Django / AWS Elastic Beanstalk
                       </div>
                     </div>
                     <a className="z-50" target="_blank" href="https://www.spotlistinc.com/">
@@ -328,16 +322,10 @@ function App() {
                         Co-Founder & Frontend Engineer
                       </div>
                       <div
-                        className="luckiestGuy text-[3vh] 3tall:text-[3vh] 2tall:leading-tight bg-clip-text"
+                        className="font-fragment text-[3vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[1] = el} 
                       >
-                        Hotswaps, LLC.
-                      </div>
-                      <div 
-                        className="text-sm md:text-lg"
-                        ref={el => projectStack.current[1] = el} 
-                      >
-                        React / TailwindCSS / Node / Express / PostgreSQL / AWS
+                        Hotswaps
                       </div>
                     </div>
                     <a className="z-50" target="_blank" href="https://www.github.com">
@@ -362,16 +350,10 @@ function App() {
                         Project
                       </div>
                       <div
-                        className="luckiestGuy text-[3vh] 3tall:text-[3vh] 2tall:leading-tight bg-clip-text"
+                        className="font-fragment text-[3vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[2] = el} 
                       >
-                        AudioAnalyzer
-                      </div>
-                      <div 
-                        className="text-sm md:text-lg"
-                        ref={el => projectStack.current[2] = el} 
-                      >
-                        React / TailwindCSS / Node / Express / PostgreSQL / AWS
+                        Audio Analyzer
                       </div>
                     </div>
                     <a className="z-50" target="_blank" href="https://www.github.com">
@@ -396,16 +378,10 @@ function App() {
                         Project
                       </div>
                       <div
-                        className="luckiestGuy text-[3vh] 3tall:text-[3vh] 2tall:leading-tight bg-clip-text"
+                        className="font-fragment text-[3vh] 3tall:text-[8vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[3] = el} 
                       >
                         Client-Server Network Visualization
-                      </div>
-                      <div 
-                        className="text-sm md:text-lg"
-                        ref={el => projectStack.current[3] = el} 
-                      >
-                        React / TailwindCSS / Node / Express / PostgreSQL / AWS
                       </div>
                     </div>
                     <a className="z-50" target="_blank" href="https://www.github.com">
@@ -430,16 +406,10 @@ function App() {
                         Project
                       </div>
                       <div
-                        className="luckiestGuy text-[3vh] 3tall:text-[3vh] 2tall:leading-tight bg-clip-text"
+                        className="font-fragment text-[3vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[4] = el} 
                       >
                         Algorithm Visualizer
-                      </div>
-                      <div 
-                        className="text-sm md:text-lg"
-                        ref={el => projectStack.current[4] = el} 
-                      >
-                        React / TailwindCSS / Node / Express / PostgreSQL / AWS
                       </div>
                     </div>
                     <a className="z-50" target="_blank" href="https://www.github.com">
@@ -455,41 +425,28 @@ function App() {
               </div>
 
               <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white invisible">
-              <div ref={el => textSections.current[2] = el} className="flex flex-col w-full h-full px-4 md:px-12 py-12" >
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                  <p>My Interests include</p>
-                  <p></p>
-                  <p>Soccer       </p>
-                  <img src={qatar} className="w-10 lg:w-20"></img>
-
-                  <p>Guitar       </p>
-                  <img src={guitar} className="w-10 lg:w-20"></img>
-
-                  <p>Snowboarding </p>
-                  <img src={snowboard} className="w-10 lg:w-20"></img>
-
-                  <p>Skateboarding</p>
-                  <img src={skate} className="w-10 lg:w-20"></img>
-
-                  <p>Cards</p>
-                  <div className="flex flex-row">
-                  <img src={heart} className="w-3 lg:w-8"></img>
-                  <img src={clover} className="w-3 lg:w-8"></img>
-                  <img src={spade} className="w-3 lg:w-8"></img>
-                  <img src={diamonds} className="w-3 lg:w-8"></img>
+                <div ref={el => textSections.current[2] = el} className="grid grid-cols-2 grid-rows-2 w-full h-full" >
+                  <div className="w-full h-full border-b border-r px-16 py-12">
+                    <h1 className="text-4xl font-bold font-fragment">About Me</h1>
+                    <br />
+                    <p className="font-fragment">Hey there! My name is <b>Minjae Jung</b>, I was born in South Korea and studied biomedical engineering at The College of New Jersey.</p>
+                    <br />
+                    <p className="font-fragment">In 2020, I graduated from the Fletiron Full-Stack Development bootcamp and became a <b>React Native Developer</b> for SpotList, a cosmetology-technology startup located in New York City</p>
+                    <br />
+                    <p className="font-fragment">Outside of work, I've been activity involded in building an ecommerce side-project with my friends called <b>Hotswaps</b>, an online marketplace focused on mechanical keyboards and other computer peripherals.</p>
+                    <br />
+                    <p className="font-fragment">In my spare time, you can find me drawing, skateboarding, and playing rock on my electric guitar. Thanks for visiting my portfolio!</p>
                   </div>
-                </div>
-                <div className="w-full h-full flex flex-col justify-end ">
-                  <p className="text-[4vh] md:text-[5vh] 3tall:text-[4vh] leading-tight">
-                    Hello, there! My name is Minjae Jung. 
-                    I am a front-end engineer. 
-                    I've done e-commerce stuff at Against All Odds 
-                    and startup stuff at Spotlist, Inc. 
-                    Besides working on digital projects, 
-                    I like playing guitar, drawing, and 
-                    grinding rails at the skatepark.
-                  </p>
-                </div>
+                  <div className="w-full h-full"></div>
+                  <div className="w-full h-full"></div>
+                  <div className=" flex flex-col justify-between w-full h-full border-t border-l px-16 py-12">
+                    <h1 className="text-4xl font-bold font-fragment">Hiring?</h1>
+                    <div className="flex font-fragment w-1/3 justify-between">
+                      <a>Resume</a>
+                      <a>LinkedIn</a>
+                      <a>GitHub</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
