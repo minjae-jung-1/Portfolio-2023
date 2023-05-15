@@ -241,22 +241,21 @@ function App() {
         <div className='bg-transparent z-50 absolute w-full h-full overflow-y-hidden'>
           <NavBar isMobile={isMobile} />
           <div className="flex w-full h-full md:h-[94%] md:pt-16 md:px-0 mt-14 md:mt-0 ">
-            <div className="tColor w-full h-[93%] md:h-full overflow-hidden mt-0">
+            <div className="tColor w-full h-[94%] md:h-full overflow-hidden mt-0">
 
               <div ref={el => sections.current[0] = el} className="homepage fixed flex flex-col h-full w-full justify-between text-white px-4 md:px-16 lg:px-24 invisible">
                 <div 
                   ref={el => textSections.current[0] = el} 
-                  className="textSectionOne h-full flex flex-col justify-center items-center py-24 
+                  className="textSectionOne h-full flex flex-col justify-center items-center md:py-24 
                              md:pb-4 md:pt-16
                              tall:pb-8 tall:pt-20
                              2tall:pb-12 2tall:pt-28
                              3tall:pb-24"
                 >
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col justify-center items-center">
                     <p className="font-fragment text-[7vh] lg:text-[12vh] xl:text-[14vh] leading-none mb-4">I'm Minjae,</p>
-                    <p className="font-fragment text-[4vh] lg:text-[12vh] xl:text-[9vh] leading-none mb-8">a Frontend Engineer</p>
-                    <p className="font-fragment text-[3vh] lg:text[4vh] lg:text-[5vh] leading-tight mb-16">with startup experience based in NYC.</p>
-                    {/* <p className="luckiestGuy text-2xl sm:text-4xl">based in New York City.</p> */}
+                    <p className="font-fragment text-center text-[4vh] lg:text-[12vh] xl:text-[9vh] leading-none mb-4 md:mb-8">a Frontend Engineer</p>
+                    <p className="font-fragment text-center text-[2vh] lg:text[4vh] lg:text-[5vh] leading-tight mb-16">with startup experience based in NYC.</p>
                   </div>
                   <div className="flex flex-col 2xl:gap-y-8 gap-y-4 md:gap-y-2 tall:gap-y-8 justify-center items-center 2xl:mt-4">
                     <div className="h-12 w-12 flex justify center items-center border rounded-[50%]
@@ -289,25 +288,25 @@ function App() {
                     ref={el => projectSection.current[0] = el} 
                   >
                     <div ref={el => projectBg.current[0] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col justify-center z-50">
-                      <div ref={el => projectHeader.current[0] = el} className="hidden text-[1.5vh] leading-none md:block">
+                    <div className="flex flex-col w-full justify-center z-50">
+                      <div ref={el => projectHeader.current[0] = el} className="text-[1.5vh] mb-2">
                         App Engineer
                       </div>
                       <div
-                        className="font-fragment text-[3vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
+                        className="font-fragment flex justify-between items-center mb-2 text-[7vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[0] = el} 
                       >
                         Spotlist
+                        <a className="z-50" target="_blank" href="https://www.spotlistinc.com/">
+                          <div 
+                            className="text-sm md:text-lg underline z-50"
+                            ref={el => projectLink.current[0] = el} 
+                          >
+                            website
+                          </div>
+                        </a>
                       </div>
                     </div>
-                    <a className="z-50" target="_blank" href="https://www.spotlistinc.com/">
-                      <div 
-                        className="text-sm md:text-lg underline z-50"
-                        ref={el => projectLink.current[0] = el} 
-                      >
-                        website
-                      </div>
-                    </a>
                   </div>
 
                   <div
@@ -317,53 +316,54 @@ function App() {
                     ref={el => projectSection.current[1] = el} 
                   >
                     <div ref={el => projectBg.current[1] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col justify-center z-50">
-                      <div ref={el => projectHeader.current[1] = el} className="hidden text-[1.5vh] leading-none mb-4 md:block">
+                    <div className="flex flex-col w-full justify-center z-50">
+                      <div ref={el => projectHeader.current[1] = el} className="text-[1.5vh] mb-2">
                         Co-Founder & Frontend Engineer
                       </div>
                       <div
-                        className="font-fragment text-[3vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
+                        className="font-fragment flex justify-between items-center mb-2 text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[1] = el} 
                       >
                         Hotswaps
+                        <a className="z-50" target="_blank" href="https://www.github.com">
+                          <div 
+                            className="text-sm md:text-lg underline z-50"
+                            ref={el => projectLink.current[1] = el} 
+                          >
+                            website
+                          </div>
+                        </a>
                       </div>
                     </div>
-                    <a className="z-50" target="_blank" href="https://www.github.com">
-                      <div 
-                        className="text-sm md:text-lg underline z-50"
-                        ref={el => projectLink.current[1] = el} 
-                      >
-                        website
-                      </div>
-                    </a>
                   </div>
 
                   <div
-                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden"
                     onMouseEnter={() => handleHover(2, true)}
                     onMouseLeave={() => handleHover(2, false)}
                     ref={el => projectSection.current[2] = el} 
                   >
                     <div ref={el => projectBg.current[2] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col justify-center z-50">
-                      <div ref={el => projectHeader.current[2] = el} className="hidden text-[1.5vh] leading-none mb-4 md:block">
+                    <div className="flex flex-col justify-center z-50 w-full">
+                      <div ref={el => projectHeader.current[2] = el} className="text-[1.5vh]">
                         Project
                       </div>
                       <div
-                        className="font-fragment text-[3vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
+                        className="font-fragment flex justify-between items-center w-full mb-2 text-[4.5vh] md:text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[2] = el} 
                       >
                         Audio Analyzer
+                        <a className="z-50" target="_blank" href="https://www.github.com">
+                          <div 
+                            className="text-sm md:text-lg underline z-50"
+                            ref={el => projectLink.current[2] = el} 
+                          >
+                            github
+                          </div>
+                        </a>
                       </div>
                     </div>
-                    <a className="z-50" target="_blank" href="https://www.github.com">
-                      <div 
-                        className="text-sm md:text-lg underline z-50"
-                        ref={el => projectLink.current[2] = el} 
-                      >
-                        github
-                      </div>
-                    </a>
+
                   </div>
 
                   <div
@@ -373,25 +373,25 @@ function App() {
                     ref={el => projectSection.current[3] = el} 
                   >
                     <div ref={el => projectBg.current[3] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col justify-center z-50">
-                      <div ref={el => projectHeader.current[3] = el} className="hidden text-[1.5vh] leading-none mb-4 md:block">
+                    <div className="flex flex-col w-full justify-center z-50">
+                      <div ref={el => projectHeader.current[3] = el} className="text-[1.5vh]">
                         Project
                       </div>
                       <div
-                        className="font-fragment text-[3vh] 3tall:text-[8vh] 2tall:leading-none bg-clip-text"
+                        className="font-fragment flex justify-between items-center text-[3vh] md:text-[5vh] 3tall:text-[7vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[3] = el} 
                       >
                         Client-Server Network Visualization
+                        <a className="z-50" target="_blank" href="https://www.github.com">
+                          <div 
+                            className="text-sm md:text-lg underline z-50"
+                            ref={el => projectLink.current[3] = el} 
+                          >
+                            github
+                          </div>
+                        </a>
                       </div>
                     </div>
-                    <a className="z-50" target="_blank" href="https://www.github.com">
-                      <div 
-                        className="text-sm md:text-lg underline z-50"
-                        ref={el => projectLink.current[3] = el} 
-                      >
-                        github
-                      </div>
-                    </a>
                   </div>
 
                   <div
@@ -401,47 +401,59 @@ function App() {
                     ref={el => projectSection.current[4] = el} 
                   >
                     <div ref={el => projectBg.current[4] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col justify-center z-50">
-                      <div ref={el => projectHeader.current[4] = el} className="hidden text-[1.5vh] leading-none mb-4 md:block">
+                    <div className="flex flex-col w-full justify-center z-50">
+                      <div ref={el => projectHeader.current[4] = el} className="text-[1.5vh]">
                         Project
                       </div>
                       <div
-                        className="font-fragment text-[3vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
+                        className="font-fragment flex justify-between items-center text-[3vh] md:text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[4] = el} 
                       >
                         Algorithm Visualizer
+                        <a className="z-50" target="_blank" href="https://www.github.com">
+                          <div 
+                            className="text-sm md:text-lg underline z-50"
+                            ref={el => projectLink.current[4] = el} 
+                          >
+                            github
+                          </div>
+                        </a>
                       </div>
                     </div>
-                    <a className="z-50" target="_blank" href="https://www.github.com">
-                      <div 
-                        className="text-sm md:text-lg underline z-50"
-                        ref={el => projectLink.current[4] = el} 
-                      >
-                        github
-                      </div>
-                    </a>
                   </div>
                 </div>
               </div>
 
               <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white invisible">
-                <div ref={el => textSections.current[2] = el} className="grid grid-cols-2 grid-rows-2 w-full h-full" >
-                  <div className="w-full h-full border-b border-r px-16 py-12">
+                <div ref={el => textSections.current[2] = el} className="flex flex-col lg:grid lg:grid-cols-2 2xl:grid 2xl:grid-cols-2 2xl:grid-rows-2 w-full h-full" >
+                  <div className="w-full h-full lg:border-b lg:border-r px-8 lg:px-16 py-12">
                     <h1 className="text-4xl font-bold font-fragment">About Me</h1>
                     <br />
                     <p className="font-fragment">Hey there! My name is <b>Minjae Jung</b>, I was born in South Korea and studied biomedical engineering at The College of New Jersey.</p>
                     <br />
-                    <p className="font-fragment">In 2020, I graduated from the Fletiron Full-Stack Development bootcamp and became a <b>React Native Developer</b> for SpotList, a cosmetology-technology startup located in New York City</p>
+                    <p className="font-fragment">In 2020, I graduated from the Flatiron Full-Stack Development bootcamp and became a <b>React Native Developer</b> for SpotList, a cosmetology-technology startup located in New York City</p>
                     <br />
                     <p className="font-fragment">Outside of work, I've been activity involded in building an ecommerce side-project with my friends called <b>Hotswaps</b>, an online marketplace focused on mechanical keyboards and other computer peripherals.</p>
                     <br />
                     <p className="font-fragment">In my spare time, you can find me drawing, skateboarding, and playing rock on my electric guitar. Thanks for visiting my portfolio!</p>
+                    <div className="xl:hidden mt-8">
+                      <h1 className="text-4xl font-bold font-fragment">Hiring?</h1>
+                      <div className="flex justify-between w-1/2 md:w-1/6 mt-4 md:mt-8">
+                      <a target="_blank" href="https://github.com/minjae-jung-1">
+                        <img className="ease h-[24px] w-[24px]" src="/github.png" alt="github" />
+                      </a>
+                      <a target="_blank" href="https://www.linkedin.com/in/minjae-jung-linked/">
+                        <img className="ease h-[24px] w-[24px]" src="/linkedin.png" alt="linkedin" />
+                      </a>
+                      <img className="ease h-[24px] w-[24px]" src="/resume.png" alt="rez zoo may" />
+                      </div>
+                    </div>
                   </div>
-                  <div className="w-full h-full"></div>
-                  <div className="w-full h-full"></div>
-                  <div className=" flex flex-col justify-between w-full h-full border-t border-l px-16 py-12">
+                  <div className="hidden 2xl:block 2xl:w-full 2xl:h-full"></div>
+                  <div className="hidden 2xl:block 2xl:w-full 2xl:h-full"></div>
+                  <div className="hidden xl:flex flex-col 2xl:justify-between w-full h-full lg:border-t lg:border-l px-8 lg:px-16 py-12">
                     <h1 className="text-4xl font-bold font-fragment">Hiring?</h1>
-                    <div className="flex font-fragment w-1/3 justify-between">
+                    <div className="flex font-fragment w-1/3 justify-between md:mt-8">
                       <a>Resume</a>
                       <a>LinkedIn</a>
                       <a>GitHub</a>

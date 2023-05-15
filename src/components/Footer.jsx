@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = React.forwardRef((props, ref ) => {
   return (
-    <footer className="flex w-full h-[6%] justify-between items-center px-4 border-t md:px-16">
+    <footer className="flex w-full h-[6%] justify-between items-center px-4 border-t md:px-8 lg:px-16">
       <div className="flex h-8 w-36 justify-between items-center">
         <div className="h-full w-full relative overflow-hidden">
           <p ref={el => ref.current.ref1 = [ el ]} className="ease cooper mt-1.5 absolute">Home</p>
