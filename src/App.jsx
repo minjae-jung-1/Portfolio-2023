@@ -431,9 +431,9 @@ function App() {
                     <br />
                     <p className="font-fragment">Hey there! My name is <b>Minjae Jung</b>, I was born in South Korea and studied biomedical engineering at The College of New Jersey.</p>
                     <br />
-                    <p className="font-fragment">In 2020, I graduated from the Flatiron Full-Stack Development bootcamp and became a <b>React Native Developer</b> for SpotList, a cosmetology-technology startup located in New York City</p>
+                    <p className="font-fragment">In 2020, I graduated from the Columbia Engineering Full-Stack Development bootcamp and became a <b>React Native Developer</b> for SpotList, a cosmetology-technology startup located in New York City</p>
                     <br />
-                    <p className="font-fragment">Outside of work, I've been activity involded in building an ecommerce side-project with my friends called <b>Hotswaps</b>, an online marketplace focused on mechanical keyboards and other computer peripherals.</p>
+                    <p className="font-fragment">Outside of work, I've been activity involded in building an ecommerce side-project with my colleagues called <b>Hotswaps</b>, an online marketplace focused on mechanical keyboards and other computer peripherals.</p>
                     <br />
                     <p className="font-fragment">In my spare time, you can find me drawing, skateboarding, and playing rock on my electric guitar. Thanks for visiting my portfolio!</p>
                     <div className="xl:hidden mt-8">
@@ -449,7 +449,15 @@ function App() {
                       </div>
                     </div>
                   </div>
-                  <div className="hidden 2xl:block 2xl:w-full 2xl:h-full"></div>
+                  <div className="w-full h-full lg:border-b lg:border-r px-8 lg:px-16 py-12">
+                    <h1 className="text-4xl font-bold font-fragment">
+                      Current Work In Progress
+                    </h1>
+                    <br/>
+                    <p>
+                      AWS Cloud Practioner Certificate
+                    </p>
+                  </div>
                   <div className="hidden 2xl:block 2xl:w-full 2xl:h-full"></div>
                   <div className="hidden xl:flex flex-col 2xl:justify-between w-full h-full lg:border-t lg:border-l px-8 lg:px-16 py-12">
                     <h1 className="text-4xl font-bold font-fragment">Hiring?</h1>
