@@ -1,6 +1,5 @@
 import { Suspense, useContext } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 
 import Spheres from "./world/Spheres";
@@ -32,7 +31,8 @@ const Experience = ({ isMobile }) => {
         />
           <Physics gravity={[-5, -1, 1]} defaultContactMaterial={{ restitution: 0.5 }}>
             <group position={[0, 0, -10]}>
-              {Array.from({ length: (tier >= 2 ) ? 80 : 20 }, (_, i) => <Spheres isMobile={isMobile} key={i} index={i} />)}
+              {/* (_,i dont use the first parameter) */}
+              {Array.from({ length: (tier >= 2 ) ? 20 : 20 }, (_, i) => <Spheres isMobile={isMobile} key={i} index={i} />)}
               <Borders isMobile={isMobile} />
               <Mouse />
             </group>

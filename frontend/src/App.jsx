@@ -8,15 +8,6 @@ import useWidthBreakpointReached from "./utils/Hooks";
 import Experience from './experience/Experience';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Form from './components/Form';
-import skate from './assests/images/skateboard.png'
-import qatar from './assests/images/qatar.png'
-import spade from './assests/images/spade.png'
-import heart from './assests/images/hearts.png'
-import clover from './assests/images/clover.png'
-import diamonds from './assests/images/diamonds.png'
-import guitar from './assests/images/guitar.png'
-import snowboard from './assests/images/snowboard.png'
 
 export const GPUContext = createContext(null)
 
@@ -279,34 +270,6 @@ function App() {
                 </div>
               </div>
 
-              <div
-                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                    onMouseEnter={() => handleHover(4, true)}
-                    onMouseLeave={() => handleHover(4, false)}
-                    ref={el => projectSection.current[4] = el} 
-                  >
-                    <div ref={el => projectBg.current[4] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col w-full justify-center z-50">
-                      <div ref={el => projectHeader.current[4] = el} className="text-[1.5vh]">
-                        Project
-                      </div>
-                      <div
-                        className="font-fragment flex justify-between items-center text-[3vh] md:text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
-                        ref={el => projectTitle.current[4] = el} 
-                      >
-                        Algorithm Visualizer
-                        <a className="z-50" target="_blank" href="https://www.github.com">
-                          <div 
-                            className="text-sm md:text-lg underline z-50"
-                            ref={el => projectLink.current[4] = el} 
-                          >
-                            github
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
               <div ref={el => sections.current[1] = el} className="flex fixed flex-col h-full w-full text-white md:pt-0 md:px-0 invisible">
                 <div ref={el => textSections.current[1] = el} className="h-full" >
 
@@ -339,50 +302,51 @@ function App() {
                   </div>
 
                   <div
-                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden"
                     onMouseEnter={() => handleHover(1, true)}
                     onMouseLeave={() => handleHover(1, false)}
                     ref={el => projectSection.current[1] = el} 
                   >
                     <div ref={el => projectBg.current[1] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col w-full justify-center z-50">
-                      <div ref={el => projectHeader.current[1] = el} className="text-[1.5vh] mb-2">
-                        Frontend Engineer
+                    <div className="flex flex-col justify-center z-50 w-full">
+                      <div ref={el => projectHeader.current[1] = el} className="text-[1.5vh]">
+                        It-Specialist
                       </div>
                       <div
-                        className="font-fragment flex justify-between items-center mb-2 text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
+                        className="font-fragment flex justify-between items-center w-full mb-2 text-[4.5vh] md:text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[1] = el} 
                       >
-                        SL Inc
-                        <a className="z-50" target="_blank" href="https://www.linkedin.com/company/spotlist-inc/">
+                        Southpole
+                        <a className="z-50" target="_blank" href="http://www.southpole-usa.com/">
                           <div 
                             className="text-sm md:text-lg underline z-50"
                             ref={el => projectLink.current[1] = el} 
                           >
-                            website
+                            Website
                           </div>
                         </a>
                       </div>
                     </div>
+
                   </div>
 
                   <div
-                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden"
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
                     onMouseEnter={() => handleHover(2, true)}
                     onMouseLeave={() => handleHover(2, false)}
                     ref={el => projectSection.current[2] = el} 
                   >
                     <div ref={el => projectBg.current[2] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col justify-center z-50 w-full">
+                    <div className="flex flex-col w-full justify-center z-50">
                       <div ref={el => projectHeader.current[2] = el} className="text-[1.5vh]">
-                        It-Specialist
+                        Software Programmer
                       </div>
                       <div
-                        className="font-fragment flex justify-between items-center w-full mb-2 text-[4.5vh] md:text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
+                        className="font-fragment flex justify-between items-center text-[3vh] md:text-[5vh] 3tall:text-[7vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[2] = el} 
                       >
-                        Southpole
-                        <a className="z-50" target="_blank" href="http://www.southpole-usa.com/">
+                        Against All Odds
+                        <a className="z-50" target="_blank" href="https://aao-usa.com/">
                           <div 
                             className="text-sm md:text-lg underline z-50"
                             ref={el => projectLink.current[2] = el} 
@@ -392,7 +356,6 @@ function App() {
                         </a>
                       </div>
                     </div>
-
                   </div>
 
                   <div
@@ -404,39 +367,80 @@ function App() {
                     <div ref={el => projectBg.current[3] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
                     <div className="flex flex-col w-full justify-center z-50">
                       <div ref={el => projectHeader.current[3] = el} className="text-[1.5vh]">
-                        Software Programmer
+                        Web Developer
                       </div>
                       <div
-                        className="font-fragment flex justify-between items-center text-[3vh] md:text-[5vh] 3tall:text-[7vh] 2tall:leading-none bg-clip-text"
+                        className="font-fragment flex justify-between items-center text-[3vh] md:text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[3] = el} 
                       >
-                        Client-Server Network Visualization
-                        <a className="z-50" target="_blank" href="https://aao-usa.com/">
+                        Allerton Flowers
+                        <a className="z-50" target="_blank" href="https://www.github.com">
                           <div 
                             className="text-sm md:text-lg underline z-50"
                             ref={el => projectLink.current[3] = el} 
                           >
-                            Website
+                            Webiste
                           </div>
                         </a>
                       </div>
                     </div>
                   </div>
+                  
+                  <div
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    onMouseEnter={() => handleHover(4, true)}
+                    onMouseLeave={() => handleHover(4, false)}
+                    ref={el => projectSection.current[4] = el} 
+                  >
+                    <div ref={el => projectBg.current[4] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
+                    <div className="flex flex-col w-full justify-center z-50">
+                      <div ref={el => projectHeader.current[4] = el} className="text-[1.5vh] mb-2">
+                        Frontend Engineer
+                      </div>
+                      <div
+                        className="font-fragment flex justify-between items-center mb-2 text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
+                        ref={el => projectTitle.current[4] = el} 
+                      >
+                        Spotlist
+                        <a className="z-50" target="_blank" href="https://www.linkedin.com/company/spotlist-inc/">
+                          <div 
+                            className="text-sm md:text-lg underline z-50"
+                            ref={el => projectLink.current[4] = el} 
+                          >
+                            website
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
                 </div>
               </div>
 
               <div ref={el => sections.current[2] = el} className="flex fixed flex-col h-full w-full text-white invisible">
-                <div ref={el => textSections.current[2] = el} className="flex flex-col lg:grid lg:grid-cols-2 2xl:grid 2xl:grid-cols-2 2xl:grid-rows-2 w-full h-full" >
-                  <div className="w-full h-full lg:border-b lg:border-r px-8 lg:px-16 py-12">
+                <div ref={el => textSections.current[2] = el} className="flex flex-col w-full h-full justify-evenly" >
+                  <div className="w-full h-full px-8 pb-12 lg:px-16 pt-12">
                     <h1 className="text-4xl font-bold font-fragment">About Me</h1>
-                    <br />
-                    <p className="font-fragment">Hey there! My name is <b>Minjae Jung</b>, I was born in South Korea and studied biomedical engineering at The College of New Jersey.</p>
-                    <br />
+                    <br className="hidden lg:block" />
+                    <p className="font-fragment">Welcome to my Page! My name is <b>Minjae Jung</b>, and I studied biomedical engineering at The College of New Jersey.</p>
+                    <br className="hidden lg:block" />
                     <p className="font-fragment">In 2020, I graduated from the Columbia Engineering Full-Stack Development bootcamp and became a <b>React Native Developer</b> for SpotList, a cosmetology-technology startup located in New York City</p>
-                    <br />
-                    <p className="font-fragment">Outside of work, I've been activity involded in building an ecommerce side-project with my colleagues called <b>Hotswaps</b>, an online marketplace focused on mechanical keyboards and other computer peripherals.</p>
-                    <br />
+                    <br className="hidden lg:block" />
+                    <p className="font-fragment">Since, I've held positions as an It Specialist, Software Programmer, and Frontend Engineer</p>
+                    <br className="hidden lg:block" />
                     <p className="font-fragment">In my spare time, you can find me drawing, skateboarding, and playing rock on my electric guitar. Thanks for visiting my portfolio!</p>
+                    <div className="sm:py-8 lg:py-12">
+                      <h1 className="text-4xl font-bold font-fragment">
+                        Current Work In Progress
+                      </h1>
+                      <br className="hidden lg:block"/>
+                      <p>Allerton Flowers: Freelance Website</p>
+                      <br className="hidden lg:block"/>
+                      <p>TheCodingPlace: Freelance Website and Web Development Curriculum</p>
+                      <br className="hidden lg:block"/>
+                      <p>AWS Cloud Practioner Certificate</p>
+                    </div>
+                    {/* shows on small screens */}
                     <div className="xl:hidden mt-8">
                       <h1 className="text-4xl font-bold font-fragment">Hiring?</h1>
                       <div className="flex justify-between w-1/2 md:w-1/6 mt-4 md:mt-8">
@@ -450,17 +454,7 @@ function App() {
                       </div>
                     </div>
                   </div>
-                  <div className="w-full h-full lg:border-b lg:border-r px-8 lg:px-16 py-12">
-                    <h1 className="text-4xl font-bold font-fragment">
-                      Current Work In Progress
-                    </h1>
-                    <br/>
-                    <p>
-                      AWS Cloud Practioner Certificate
-                    </p>
-                  </div>
-                  <div className="hidden 2xl:block 2xl:w-full 2xl:h-full"></div>
-                  <div className="hidden xl:flex flex-col 2xl:justify-between w-full h-full lg:border-t lg:border-l px-8 lg:px-16 py-12">
+                  <div className="hidden xl:flex flex-col 2xl:justify-between w-full h-full px-8 pt-0 lg:px-16 pt-12 pb-32">
                     <h1 className="text-4xl font-bold font-fragment">Hiring?</h1>
                     <div className="flex font-fragment w-1/3 justify-between md:mt-8">
                       <a>Resume</a>
