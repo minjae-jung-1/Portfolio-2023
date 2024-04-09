@@ -342,7 +342,7 @@ function App() {
                         Software Programmer
                       </div>
                       <div
-                        className="font-fragment flex justify-between items-center text-[3vh] md:text-[5vh] 3tall:text-[7vh] 2tall:leading-none bg-clip-text"
+                        className="font-fragment flex justify-between items-center text-[4.5vh] md:text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
                         ref={el => projectTitle.current[2] = el} 
                       >
                         Against All Odds
