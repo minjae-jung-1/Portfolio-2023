@@ -279,123 +279,7 @@ function App() {
                 </div>
               </div>
 
-              <div ref={el => sections.current[1] = el} className="flex fixed flex-col h-full w-full text-white md:pt-0 md:px-0 invisible">
-                <div ref={el => textSections.current[1] = el} className="h-full" >
-
-                  <div
-                    className="accordion flex justify-between items-center h-1/5 px-8 text-2xl hover:pointer overflow-hidden"
-                    onMouseEnter={() => handleHover(0, true)}
-                    onMouseLeave={() => handleHover(0, false)}
-                    ref={el => projectSection.current[0] = el} 
-                  >
-                    <div ref={el => projectBg.current[0] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col w-full justify-center z-50">
-                      <div ref={el => projectHeader.current[0] = el} className="text-[1.5vh] mb-2">
-                        App Engineer
-                      </div>
-                      <div
-                        className="font-fragment flex justify-between items-center mb-2 text-[7vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
-                        ref={el => projectTitle.current[0] = el} 
-                      >
-                        Spotlist
-                        <a className="z-50" target="_blank" href="https://www.spotlistinc.com/">
-                          <div 
-                            className="text-sm md:text-lg underline z-50"
-                            ref={el => projectLink.current[0] = el} 
-                          >
-                            website
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                    onMouseEnter={() => handleHover(1, true)}
-                    onMouseLeave={() => handleHover(1, false)}
-                    ref={el => projectSection.current[1] = el} 
-                  >
-                    <div ref={el => projectBg.current[1] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col w-full justify-center z-50">
-                      <div ref={el => projectHeader.current[1] = el} className="text-[1.5vh] mb-2">
-                        Co-Founder & Frontend Engineer
-                      </div>
-                      <div
-                        className="font-fragment flex justify-between items-center mb-2 text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
-                        ref={el => projectTitle.current[1] = el} 
-                      >
-                        Hotswaps
-                        <a className="z-50" target="_blank" href="https://www.github.com">
-                          <div 
-                            className="text-sm md:text-lg underline z-50"
-                            ref={el => projectLink.current[1] = el} 
-                          >
-                            website
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden"
-                    onMouseEnter={() => handleHover(2, true)}
-                    onMouseLeave={() => handleHover(2, false)}
-                    ref={el => projectSection.current[2] = el} 
-                  >
-                    <div ref={el => projectBg.current[2] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col justify-center z-50 w-full">
-                      <div ref={el => projectHeader.current[2] = el} className="text-[1.5vh]">
-                        Project
-                      </div>
-                      <div
-                        className="font-fragment flex justify-between items-center w-full mb-2 text-[4.5vh] md:text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
-                        ref={el => projectTitle.current[2] = el} 
-                      >
-                        Audio Analyzer
-                        <a className="z-50" target="_blank" href="https://www.github.com">
-                          <div 
-                            className="text-sm md:text-lg underline z-50"
-                            ref={el => projectLink.current[2] = el} 
-                          >
-                            github
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <div
-                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
-                    onMouseEnter={() => handleHover(3, true)}
-                    onMouseLeave={() => handleHover(3, false)}
-                    ref={el => projectSection.current[3] = el} 
-                  >
-                    <div ref={el => projectBg.current[3] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
-                    <div className="flex flex-col w-full justify-center z-50">
-                      <div ref={el => projectHeader.current[3] = el} className="text-[1.5vh]">
-                        Project
-                      </div>
-                      <div
-                        className="font-fragment flex justify-between items-center text-[3vh] md:text-[5vh] 3tall:text-[7vh] 2tall:leading-none bg-clip-text"
-                        ref={el => projectTitle.current[3] = el} 
-                      >
-                        Client-Server Network Visualization
-                        <a className="z-50" target="_blank" href="https://www.github.com">
-                          <div 
-                            className="text-sm md:text-lg underline z-50"
-                            ref={el => projectLink.current[3] = el} 
-                          >
-                            github
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
+              <div
                     className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
                     onMouseEnter={() => handleHover(4, true)}
                     onMouseLeave={() => handleHover(4, false)}
@@ -417,6 +301,122 @@ function App() {
                             ref={el => projectLink.current[4] = el} 
                           >
                             github
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+              <div ref={el => sections.current[1] = el} className="flex fixed flex-col h-full w-full text-white md:pt-0 md:px-0 invisible">
+                <div ref={el => textSections.current[1] = el} className="h-full" >
+
+                  <div
+                    className="accordion flex justify-between items-center h-1/5 px-8 text-2xl hover:pointer overflow-hidden"
+                    onMouseEnter={() => handleHover(0, true)}
+                    onMouseLeave={() => handleHover(0, false)}
+                    ref={el => projectSection.current[0] = el} 
+                  >
+                    <div ref={el => projectBg.current[0] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
+                    <div className="flex flex-col w-full justify-center z-50">
+                      <div ref={el => projectHeader.current[0] = el} className="text-[1.5vh] mb-2">
+                        Frontend Developer
+                      </div>
+                      <div
+                        className="font-fragment flex justify-between items-center mb-2 text-[7vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
+                        ref={el => projectTitle.current[0] = el} 
+                      >
+                        Hotswaps
+                        <a className="z-50" target="_blank" href="https://www.hotswaps.io/">
+                          <div 
+                            className="text-sm md:text-lg underline z-50"
+                            ref={el => projectLink.current[0] = el} 
+                          >
+                            website
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    onMouseEnter={() => handleHover(1, true)}
+                    onMouseLeave={() => handleHover(1, false)}
+                    ref={el => projectSection.current[1] = el} 
+                  >
+                    <div ref={el => projectBg.current[1] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
+                    <div className="flex flex-col w-full justify-center z-50">
+                      <div ref={el => projectHeader.current[1] = el} className="text-[1.5vh] mb-2">
+                        Frontend Engineer
+                      </div>
+                      <div
+                        className="font-fragment flex justify-between items-center mb-2 text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
+                        ref={el => projectTitle.current[1] = el} 
+                      >
+                        SL Inc
+                        <a className="z-50" target="_blank" href="https://www.linkedin.com/company/spotlist-inc/">
+                          <div 
+                            className="text-sm md:text-lg underline z-50"
+                            ref={el => projectLink.current[1] = el} 
+                          >
+                            website
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden"
+                    onMouseEnter={() => handleHover(2, true)}
+                    onMouseLeave={() => handleHover(2, false)}
+                    ref={el => projectSection.current[2] = el} 
+                  >
+                    <div ref={el => projectBg.current[2] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
+                    <div className="flex flex-col justify-center z-50 w-full">
+                      <div ref={el => projectHeader.current[2] = el} className="text-[1.5vh]">
+                        It-Specialist
+                      </div>
+                      <div
+                        className="font-fragment flex justify-between items-center w-full mb-2 text-[4.5vh] md:text-[6vh] 3tall:text-[11vh] 2tall:leading-none bg-clip-text"
+                        ref={el => projectTitle.current[2] = el} 
+                      >
+                        Southpole
+                        <a className="z-50" target="_blank" href="http://www.southpole-usa.com/">
+                          <div 
+                            className="text-sm md:text-lg underline z-50"
+                            ref={el => projectLink.current[2] = el} 
+                          >
+                            Website
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div
+                    className="accordion flex justify-between items-center border-t-2 h-1/5 px-8 text-2xl hover:pointer overflow-hidden gap-x-2"
+                    onMouseEnter={() => handleHover(3, true)}
+                    onMouseLeave={() => handleHover(3, false)}
+                    ref={el => projectSection.current[3] = el} 
+                  >
+                    <div ref={el => projectBg.current[3] = el}  className="absolute h-1/5 w-full bg-white ml-[-2rem]" />
+                    <div className="flex flex-col w-full justify-center z-50">
+                      <div ref={el => projectHeader.current[3] = el} className="text-[1.5vh]">
+                        Software Programmer
+                      </div>
+                      <div
+                        className="font-fragment flex justify-between items-center text-[3vh] md:text-[5vh] 3tall:text-[7vh] 2tall:leading-none bg-clip-text"
+                        ref={el => projectTitle.current[3] = el} 
+                      >
+                        Client-Server Network Visualization
+                        <a className="z-50" target="_blank" href="https://aao-usa.com/">
+                          <div 
+                            className="text-sm md:text-lg underline z-50"
+                            ref={el => projectLink.current[3] = el} 
+                          >
+                            Website
                           </div>
                         </a>
                       </div>
