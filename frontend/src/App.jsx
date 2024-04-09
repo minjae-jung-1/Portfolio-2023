@@ -450,16 +450,18 @@ function App() {
                       <a target="_blank" href="https://www.linkedin.com/in/minjae-jung-linked/">
                         <img className="ease h-[24px] w-[24px]" src="/linkedin.png" alt="linkedin" />
                       </a>
-                      <img className="ease h-[24px] w-[24px]" src="/resume.png" alt="rez zoo may" />
+                      <a target="_blank" href="/Resume 4_2024.pdf">
+                        <img className="ease h-[24px] w-[24px]" src="/resume.png" alt="rez zoo may" />
+                      </a>
                       </div>
                     </div>
                   </div>
                   <div className="hidden xl:flex flex-col 2xl:justify-between w-full h-full px-8 pt-0 lg:px-16 pt-12 pb-32">
                     <h1 className="text-4xl font-bold font-fragment">Hiring?</h1>
                     <div className="flex font-fragment w-1/3 justify-between md:mt-8">
-                      <a>Resume</a>
-                      <a>LinkedIn</a>
-                      <a>GitHub</a>
+                      <a target="_blank" href="/Resume 4_2024.pdf">Resume</a>
+                      <a target="_blank" href="https://www.linkedin.com/in/minjae-jung-linked/">LinkedIn</a>
+                      <a target="_blank" href="https://github.com/minjae-jung-1/">GitHub</a>
                     </div>
                   </div>
                 </div>
